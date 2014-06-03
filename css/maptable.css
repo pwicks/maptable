@@ -1,0 +1,93 @@
+body { 
+  padding: 30px; 
+}
+
+.country {
+  fill: #ccc;
+  stroke: transparent;
+  stroke-width: 0px;
+  cursor:pointer;
+}
+.country:hover{
+  opacity:0.9;
+}
+div.tooltip {
+  color: #222; 
+  background: #fff; 
+  padding: .5em; 
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 2px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  opacity: 0.9; 
+  position: absolute;
+}
+.marker {
+  fill: #f6d622;
+  opacity: 1; 
+  stroke-width:1;
+  stroke:#FFF;
+}
+.marker:hover {
+  fill: #f6c342;
+}
+
+@media print
+{    
+  .no-print, .no-print *, .dynatable-per-page, .dynatable-search, .dynatable-pagination-links, .tooltip, .filters
+  {
+      display: none !important;
+  }
+  .country {
+    fill:#f9f9f9 !important;
+    stroke-width:1 !important;
+    stroke: #BBB !important;
+  }
+  .marker {
+    fill: #f6c38d;
+    opacity: 1; 
+    stroke-width:1;
+    stroke:#898989;
+  }
+}
+.filters{
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  border-radius: 4px 4px 0 0;
+  box-shadow: none;
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 15px 0 15px;
+  border-bottom: 0;
+
+}
+.filters .filters_label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #BBB;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#map {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  box-shadow: none;
+  position: relative;
+  margin: 0 15px 0 15px;
+}
+#table{
+  margin-left: 0;
+  margin-right: 0;
+  top: -1px;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  box-shadow: none;
+  position: relative;
+  margin: 0 15px 0 15px;
+}

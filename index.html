@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>IXP Directory</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/maptable.css" rel="stylesheet">
+</head>
+  <body>
+    <h1 class="page-header">IXP Directory</h1>
+      <div class="container">
+        <div class="filters">
+          <div class="filters_label">Fitlers</div>
+          <div id="filters_content"></div>
+        </div>
+        <div id="map"></div>
+        <div id="table"></div>
+      </div>
+    </div>
+
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/queue.v1.min.js"></script>
+    <script src="js/topojson.js"></script>
+
+    <script src="js/maptable.js"></script>
+
+    <script type="text/javascript">
+      MapTable.init({
+        data_csv_path : "new.csv",
+        color_range: ["#91A6BB", "#97ABBF", "#9DB0C3", "#A4B5C6", "#AABACA", "#AFBFCE", "#B5C4D2", "#BCC9D5", "#C2CED9", "#C8D3DD"],
+        table_columns : [
+          {rawName: "region", displayName: "Region"},
+          {rawName: "countryLong", displayName: "Country"},
+          {rawName: "city", displayName: "City"},
+          {rawName: "participants", displayName: "Participants"},
+          {rawName: "traffic", displayName: "Traffic"},
+          {rawName: "prefixes", displayName: "Prefixes"},
+          {rawName: "established", displayName: "Established"}
+        ],
+        tooltip_marker_content : function(d){
+          return "<strong>" + d.formattedAddress + "</strong> <br> <strong>Participants:</strong> " + d.participants + "<br> <strong>Traffic:</strong> " + d.traffic + "";
+        },
+        tooltip_country_content : function(d){
+          return d.name;
+        }
+      });
+    </script>
+
+  </body>
+</html>
