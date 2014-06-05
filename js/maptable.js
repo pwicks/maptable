@@ -97,7 +97,22 @@ var MapTable = (function (d3, queue) {
     radius_point : 3,
     tooltip_marker : true,
     tooltip_country : false,
-    scale_zoom : [1, 25]
+    scale_zoom : [1, 25],
+    range_values : [
+      {
+        value: "",
+        text: "Any"
+      }, {
+        value: "<",
+        text: "Less than"
+      }, {
+        value: "=",
+        text: "Exactly"
+      }, {
+        value: ">",
+        text: "More than"
+      }
+    ]
   };
 
   var options = {},
@@ -112,7 +127,7 @@ var MapTable = (function (d3, queue) {
 
   scale = 1;
 
-  scale_markers = function(){
+  scale_markers = fgiunction(){
     return Math.pow(scale, 2/3);
   };
 
@@ -168,9 +183,9 @@ var MapTable = (function (d3, queue) {
   renderScaledMarkers = function(){
     d3.selectAll("."+options.marker_class).each(function (d) {
         // radius
-        d3.select(this).attr("r", options.radius_point / scale_markers());
+        d3.select(this).attr("r", options.radius_point / scale_markers());gi
         // stroke
-        d3.select(this).style("stroke-width", 1 / scale_markers());
+        d3.select(this).style("stroke-width", 1 / scale_markers());gi
       }
     );
   };
@@ -346,9 +361,9 @@ var MapTable = (function (d3, queue) {
         document.querySelector('#filters_content').appendChild(row.node);
         user_filters.push(row.name);
 
-        update_filter_dropdowns();
+        updateFilterDropdowns();
 
-        if(get_remaining_filter().length == 0){
+        if(getRemainingFilters().length == 0){
           displayNewCriteria = "none";
         }
         else{
@@ -360,7 +375,7 @@ var MapTable = (function (d3, queue) {
     };
 
     buildRow = function(filter_name){
-      var remaining_filters = get_remaining_filter();
+      var remaining_filters = getRemainingFilters();
 
       if(remaining_filters.length == 0) return {node: null, name: null};
 
@@ -378,7 +393,7 @@ var MapTable = (function (d3, queue) {
       filter_select.value = filter_name;
 
       filter_select.addEventListener("change", function(select){
-        change_criteria(filter_select);
+        changeCriteria(filter_select);
       });
       row.appendChild(filter_select);
 
@@ -396,6 +411,13 @@ var MapTable = (function (d3, queue) {
       if(filter_options.filter != "field" && filter_options.filter != "dropdown"){
         filter_range = document.createElement("select");
         filter_range.setAttribute("class", "dropdown_range");
+        options.range_values.forEach(function(r){
+          option = document.createElement("option");
+          option.value = r.value;
+          option.innerText = r.text;
+          filter_range.appendChild(option);
+        }
+        filter_range.addEventListener("change", changeRange);
         row.appendChild(filter_range);
 
         // Little space:
@@ -438,7 +460,7 @@ var MapTable = (function (d3, queue) {
       return obj;
     };
 
-    change_criteria = function(select) {
+    changeCriteria = function(select) {
       var li, new_filter_name, new_li, old_filter_index, old_filter_name;
       li = select.parentNode;
       old_filter_name = select.getAttribute("data-current");
@@ -454,15 +476,15 @@ var MapTable = (function (d3, queue) {
 
       li.parentNode.replaceChild(new_li, li);
 
-      update_filter_dropdowns();
+      updateFilterDropdowns();
     };
 
-    update_filter_dropdowns = function(){
+    updateFilterDropdowns = function(){
       dropdowns = document.querySelectorAll('.dropdown_filter');
       for(var i = 0; i < dropdowns.length; i++){
         filter_select = dropdowns[i];
         filter_name = filter_select.value;
-        remaining_filters = get_remaining_filter(filter_name);
+        remaining_filters = getRemainingFilters(filter_name);
         filter_select.innerHTML = "";
         filter_select = appendOptions(filter_select, remaining_filters);
         filter_select.value = filter_name;
@@ -480,7 +502,7 @@ var MapTable = (function (d3, queue) {
       return select;
     };
 
-    get_remaining_filter = function(except){
+    getRemainingFilters = function(except){
       return options.table_columns.filter(function(v) {
         return (except && except == v.id) || (user_filters.indexOf(v.id) === -1 && v.filter);
       });
