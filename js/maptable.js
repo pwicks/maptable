@@ -73,6 +73,11 @@ var MapTable = (function (d3, queue) {
         .defer(d3.tsv, options.countries_name_tsv_path)
         .await(buildBaseMap);
   
+      filters = loadFilters();
+    },
+
+    addFilter : function(){
+      filters.newFilter();
     }
   }
 
@@ -83,6 +88,7 @@ var MapTable = (function (d3, queue) {
     height: 450,
     map_selector: "#map",
     table_container: "#table",
+    filters_new_criteria_selector: "#filters_new_criteria",
     table_class: "table table-stripped",
     marker_class: "marker",
     tooltip_class: "tooltip",
@@ -99,7 +105,8 @@ var MapTable = (function (d3, queue) {
   svg,
   projection,
   color,
-  table_body;
+  table_body,
+  filters;
 
   rawData = [];
 
@@ -293,10 +300,7 @@ var MapTable = (function (d3, queue) {
     .attr("cy", function(d){
       return d.y;
     })
-    .attr("r", options.radius_point)
-    .attr("title", function(d){
-      return d.formattedAddress;
-    });
+    .attr("r", options.radius_point);
 
     if(options.tooltip_marker == true){
       activateTooltip(
@@ -326,11 +330,175 @@ var MapTable = (function (d3, queue) {
       .html(function (row) {
         tds = "";
         options.table_columns.forEach(function (column) {
-          tds += "<td>" + row[column.rawName] + "</td>";
+          tds += "<td>" + row[column.id] + "</td>";
         });
         return tds;
       });
-  }
+  };
+
+  loadFilters = function(){
+    var user_filters = [];
+
+    var methods = {
+      newFilter : function(){
+        row = buildRow();
+
+        document.querySelector('#filters_content').appendChild(row.node);
+        user_filters.push(row.name);
+
+        update_filter_dropdowns();
+
+        if(get_remaining_filter().length == 0){
+          displayNewCriteria = "none";
+        }
+        else{
+          displayNewCriteria = "block";
+        }
+
+        document.querySelector(options.filters_new_criteria_selector).style.display = displayNewCriteria;
+      }
+    };
+
+    buildRow = function(filter_name){
+      var remaining_filters = get_remaining_filter();
+
+      if(remaining_filters.length == 0) return {node: null, name: null};
+
+      if(typeof(filter_name) !== "string") filter_name = remaining_filters[0].id;
+      filter_options = filterOptions(filter_name);
+
+      row = document.createElement("li");
+      row.setAttribute("class", "filter_element");
+
+      // Filter select
+      filter_select = document.createElement("select");
+      filter_select.setAttribute("class", "dropdown_filter");
+      filter_select.setAttribute("data-current", filter_name);
+      filter_select = appendOptions(filter_select, remaining_filters);
+      filter_select.value = filter_name;
+
+      filter_select.addEventListener("change", function(select){
+        change_criteria(filter_select);
+      });
+      row.appendChild(filter_select);
+
+      // Filter verb
+      filter_verb = document.createElement("span");
+      if(filter_options.filter == "field"){
+        filter_verb.innerText = " contains ";
+      }
+      else{
+        filter_verb.innerText = " is ";
+      }
+      row.appendChild(filter_verb);
+
+      // Fitler range
+      if(filter_options.filter != "field" && filter_options.filter != "dropdown"){
+        filter_range = document.createElement("select");
+        filter_range.setAttribute("class", "dropdown_range");
+        row.appendChild(filter_range);
+
+        // Little space:
+        row.appendChild(document.createTextNode(" "));
+
+      }
+
+      // Filter value
+      if(filter_options.filter != "dropdown"){
+        filter_value = document.createElement("input");
+        if(filter_options.filter == "number"){
+          filter_value.setAttribute("type", "number");
+        }
+        else if(filter_options.filter == "date"){
+          filter_value.setAttribute("type", "date");
+        }
+        else{
+          filter_value.setAttribute("type", "text");
+        }
+      }
+      else{
+        filter_value = document.createElement("select");
+      }
+      filter_value.setAttribute("class", "input_value");
+
+      row.appendChild(filter_value);
+
+
+      return {node: row, name: filter_name};
+    };
+
+    filterOptions = function(filter_name){
+      obj = null;
+      options.table_columns.forEach(function(f){
+        if(f.id == filter_name){
+          obj = f;
+        }
+        return;
+      });
+      return obj;
+    };
+
+    change_criteria = function(select) {
+      var li, new_filter_name, new_li, old_filter_index, old_filter_name;
+      li = select.parentNode;
+      old_filter_name = select.getAttribute("data-current");
+      new_filter_name = select.value;
+
+      old_filter_index = user_filters.indexOf(old_filter_name);
+      user_filters.splice(old_filter_index, 1);
+
+      row = buildRow(new_filter_name);
+      new_li = row.node;
+
+      user_filters.push(row.name);
+
+      li.parentNode.replaceChild(new_li, li);
+
+      update_filter_dropdowns();
+    };
+
+    update_filter_dropdowns = function(){
+      dropdowns = document.querySelectorAll('.dropdown_filter');
+      for(var i = 0; i < dropdowns.length; i++){
+        filter_select = dropdowns[i];
+        filter_name = filter_select.value;
+        remaining_filters = get_remaining_filter(filter_name);
+        filter_select.innerHTML = "";
+        filter_select = appendOptions(filter_select, remaining_filters);
+        filter_select.value = filter_name;
+      };
+    };
+    appendOptions = function(select, data, default_value){
+      data.forEach(function(f){
+        // Filter select
+        option = document.createElement("option");
+        option.setAttribute("value", f.id);
+        option.innerText = f.displayName;
+        select.appendChild(option);
+      });
+      select.value = default_value;
+      return select;
+    };
+
+    get_remaining_filter = function(except){
+      return options.table_columns.filter(function(v) {
+        return (except && except == v.id) || (user_filters.indexOf(v.id) === -1 && v.filter);
+      });
+    };
+
+    appendNewFilter = function(){
+      document.querySelector(options.filters_new_criteria_selector).innerHTML = "";
+      add_filter_link = document.createElement("a");
+      add_filter_link.innerText = "+ New filter";
+      add_filter_link.addEventListener("click", methods.newFilter);
+
+      document.querySelector(options.filters_new_criteria_selector).appendChild(add_filter_link);
+    }
+
+    appendNewFilter();
+    methods.newFilter();
+    return methods;
+  };
 
   return module;
 
