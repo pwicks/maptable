@@ -417,7 +417,9 @@ var MapTable = (function (d3, queue) {
           option.innerText = r.text;
           filter_range.appendChild(option);
         });
-        filter_range.addEventListener("change", changeRange);
+        filter_range.addEventListener("change", function(){
+          changeRange(filter_range);
+        });
         row.appendChild(filter_range);
 
         // Little space:
@@ -445,6 +447,10 @@ var MapTable = (function (d3, queue) {
 
       row.appendChild(filter_value);
 
+      if(typeof(filter_range) != "undefined"){
+        changeRange(filter_range);
+      }
+
 
       return {node: row, name: filter_name};
     };
@@ -458,6 +464,15 @@ var MapTable = (function (d3, queue) {
         return;
       });
       return obj;
+    };
+
+    changeRange = function(filter_range){
+      if (filter_range.value == "") {
+        displayValue = "none";
+      } else {
+        displayValue = "inline-block";
+      }
+      filter_range.parentNode.querySelector(".input_value").style.display = displayValue;
     };
 
     changeCriteria = function(select) {
