@@ -127,7 +127,7 @@ var MapTable = (function (d3, queue) {
 
   scale = 1;
 
-  scale_markers = fgiunction(){
+  scale_markers = function(){
     return Math.pow(scale, 2/3);
   };
 
@@ -416,7 +416,7 @@ var MapTable = (function (d3, queue) {
           option.value = r.value;
           option.innerText = r.text;
           filter_range.appendChild(option);
-        }
+        });
         filter_range.addEventListener("change", changeRange);
         row.appendChild(filter_range);
 
