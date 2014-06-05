@@ -9,9 +9,14 @@
     <h1 class="page-header">IXP Directory</h1>
       <div class="container">
         <div class="filters">
-          <div class="filters_label">Fitlers</div>
+          <div class="filters_label">Filters</div>
           <div id="filters_content"></div>
-          <div id="filters_new_criteria"></div>
+          <div class="pull-right">
+            <button class="btn">Reset</button>
+            <button class="btn btn-primary">Filter</button>
+          </div>
+          <div id="filters_new_filter"></div>
+          <div class="clearer"></div>
         </div>
         <div id="map"></div>
         <div id="table"></div>
@@ -37,7 +42,7 @@
           {
             id: "countryLong",
             displayName: "Country",
-            filter: "field"
+            filter: "dropdown"
           },
           {
             id: "city",

@@ -72,8 +72,6 @@ var MapTable = (function (d3, queue) {
         .defer(d3.json, options.map_json_path)
         .defer(d3.tsv, options.countries_name_tsv_path)
         .await(buildBaseMap);
-  
-      filters = loadFilters();
     },
 
     addFilter : function(){
@@ -88,7 +86,7 @@ var MapTable = (function (d3, queue) {
     height: 450,
     map_selector: "#map",
     table_container: "#table",
-    filters_new_criteria_selector: "#filters_new_criteria",
+    filters_new_filter_selector: "#filters_new_filter",
     table_class: "table table-stripped",
     marker_class: "marker",
     tooltip_class: "tooltip",
@@ -183,9 +181,9 @@ var MapTable = (function (d3, queue) {
   renderScaledMarkers = function(){
     d3.selectAll("."+options.marker_class).each(function (d) {
         // radius
-        d3.select(this).attr("r", options.radius_point / scale_markers());gi
+        d3.select(this).attr("r", options.radius_point / scale_markers());
         // stroke
-        d3.select(this).style("stroke-width", 1 / scale_markers());gi
+        d3.select(this).style("stroke-width", 1 / scale_markers());
       }
     );
   };
@@ -268,6 +266,8 @@ var MapTable = (function (d3, queue) {
       data = buildData();
       renderTable(data);
       renderMarkers(data);
+      filters = loadFilters();
+
     });
   };
 
@@ -362,15 +362,7 @@ var MapTable = (function (d3, queue) {
         user_filters.push(row.name);
 
         updateFilterDropdowns();
-
-        if(getRemainingFilters().length == 0){
-          displayNewCriteria = "none";
-        }
-        else{
-          displayNewCriteria = "block";
-        }
-
-        document.querySelector(options.filters_new_criteria_selector).style.display = displayNewCriteria;
+        checkReachMaxFilters();
       }
     };
 
@@ -385,6 +377,8 @@ var MapTable = (function (d3, queue) {
       row = document.createElement("li");
       row.setAttribute("class", "filter_element");
 
+      appendButtons(row, filter_name);
+
       // Filter select
       filter_select = document.createElement("select");
       filter_select.setAttribute("class", "dropdown_filter");
@@ -393,7 +387,7 @@ var MapTable = (function (d3, queue) {
       filter_select.value = filter_name;
 
       filter_select.addEventListener("change", function(select){
-        changeCriteria(filter_select);
+        changeFilter(filter_select);
       });
       row.appendChild(filter_select);
 
@@ -442,6 +436,26 @@ var MapTable = (function (d3, queue) {
       }
       else{
         filter_value = document.createElement("select");
+
+        unique_values = d3.nest()
+        .key(function(d) {
+          return d[filter_name]
+        })
+        .sortKeys(d3.ascending)
+        .entries(buildData());
+
+        option = document.createElement("option");
+        option.value = "";
+        option.innerText = "Any";
+        filter_value.appendChild(option);
+
+        unique_values.forEach(function(d){
+          option = document.createElement("option");
+          option.value = d.key;
+          option.innerText = d.key;
+          filter_value.appendChild(option);
+        })
+
       }
       filter_value.setAttribute("class", "input_value");
 
@@ -475,7 +489,7 @@ var MapTable = (function (d3, queue) {
       filter_range.parentNode.querySelector(".input_value").style.display = displayValue;
     };
 
-    changeCriteria = function(select) {
+    changeFilter = function(select) {
       var li, new_filter_name, new_li, old_filter_index, old_filter_name;
       li = select.parentNode;
       old_filter_name = select.getAttribute("data-current");
@@ -505,6 +519,7 @@ var MapTable = (function (d3, queue) {
         filter_select.value = filter_name;
       };
     };
+
     appendOptions = function(select, data, default_value){
       data.forEach(function(f){
         // Filter select
@@ -523,13 +538,74 @@ var MapTable = (function (d3, queue) {
       });
     };
 
+    appendButtons = function(li, filter_name){
+      btn_group = document.createElement("div");
+      btn_group.setAttribute("class", "btn-group pull-right");
+
+      btn_plus = document.createElement("div");
+      btn_plus.setAttribute("class", "btn btn-plus");
+      btn_plus.innerText = "+";
+      btn_plus.addEventListener("click", function(){
+        plusFilter(li);
+      });
+      btn_group.appendChild(btn_plus);
+
+
+      btn_minus = document.createElement("div");
+      btn_minus.setAttribute("class", "btn btn-minus");
+      btn_minus.innerText = "-";
+      btn_minus.addEventListener("click", function(){
+        minusFilter(li);
+      });
+      btn_group.appendChild(btn_minus);
+
+      li.appendChild(btn_group);
+    }
+
+    plusFilter = function(after_element) {
+      var row;
+      if (after_element == null) {
+        after_element = '';
+      }
+      row = buildRow();
+      if (after_element === '') {
+        document.querySelector('#filters_content').appendChild(row.node);
+      } else {
+        after_element.parentNode.insertBefore(row.node, after_element.nextSibling);
+      }
+      user_filters.push(row.name);
+      updateFilterDropdowns();
+    };
+
+    minusFilter = function(li){
+      filter_name = document.querySelector(".dropdown_filter").value;
+      li.remove();
+      filter_index = user_filters.indexOf(filter_name);
+      user_filters.splice(filter_index, 1);
+
+      updateFilterDropdowns();
+      checkReachMaxFilters();
+    };
+
+    checkReachMaxFilters = function(){
+      if(getRemainingFilters().length == 0){
+        displayNewFilter = "none";
+      }
+      else{
+        displayNewFilter = "block";
+      }
+
+      document.querySelector(options.filters_new_filter_selector).style.display = displayNewFilter;
+    };
+
     appendNewFilter = function(){
-      document.querySelector(options.filters_new_criteria_selector).innerHTML = "";
-      add_filter_link = document.createElement("a");
+      document.querySelector(options.filters_new_filter_selector).innerHTML = "";
+      add_filter_link = document.createElement("button");
+      add_filter_link.setAttribute("class", "btn");
       add_filter_link.innerText = "+ New filter";
       add_filter_link.addEventListener("click", methods.newFilter);
 
-      document.querySelector(options.filters_new_criteria_selector).appendChild(add_filter_link);
+      document.querySelector(options.filters_new_filter_selector).appendChild(add_filter_link);
     }
 
     appendNewFilter();

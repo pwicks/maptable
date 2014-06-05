@@ -1,6 +1,9 @@
 body { 
   padding: 30px; 
 }
+.clearer{
+  clear:both;
+}
 
 .country {
   fill: #ccc;
@@ -97,6 +100,9 @@ div.tooltip {
   padding-bottom: 10px;
   border-bottom: 1px solid #DDD;
   color:#AAA;
+}
+.filter_element .verb{
+  line-height: 
 }
 .plus_minus {
   float: right;
