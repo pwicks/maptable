@@ -87,6 +87,7 @@ var MapTable = (function (d3, queue) {
     map_selector: "#map",
     table_container: "#table",
     filters_new_filter_selector: "#filters_new_filter",
+    filters_reset_selector: "#filters_reset",
     table_class: "table table-stripped",
     marker_class: "marker",
     tooltip_class: "tooltip",
@@ -363,6 +364,15 @@ var MapTable = (function (d3, queue) {
 
         updateFilterDropdowns();
         checkReachMaxFilters();
+      },
+      reset: function(){
+        user_filters = [];
+        var li = document.getElementsByClassName('filter_element');
+
+        while(li[0]) {
+          li[0].parentNode.removeChild(li[0]);
+        }
+        checkReachMaxFilters();
       }
     };
 
@@ -387,7 +397,7 @@ var MapTable = (function (d3, queue) {
       filter_select.value = filter_name;
 
       filter_select.addEventListener("change", function(select){
-        changeFilter(filter_select);
+        changeFilter(this);
       });
       row.appendChild(filter_select);
 
@@ -412,7 +422,7 @@ var MapTable = (function (d3, queue) {
           filter_range.appendChild(option);
         });
         filter_range.addEventListener("change", function(){
-          changeRange(filter_range);
+          changeRange(this);
         });
         row.appendChild(filter_range);
 
@@ -542,7 +552,7 @@ var MapTable = (function (d3, queue) {
       btn_group = document.createElement("div");
       btn_group.setAttribute("class", "btn-group pull-right");
 
-      btn_plus = document.createElement("div");
+      btn_plus = document.createElement("button");
       btn_plus.setAttribute("class", "btn btn-plus");
       btn_plus.innerText = "+";
       btn_plus.addEventListener("click", function(){
@@ -551,7 +561,7 @@ var MapTable = (function (d3, queue) {
       btn_group.appendChild(btn_plus);
 
 
-      btn_minus = document.createElement("div");
+      btn_minus = document.createElement("button");
       btn_minus.setAttribute("class", "btn btn-minus");
       btn_minus.innerText = "-";
       btn_minus.addEventListener("click", function(){
@@ -575,10 +585,11 @@ var MapTable = (function (d3, queue) {
       }
       user_filters.push(row.name);
       updateFilterDropdowns();
+      checkReachMaxFilters();
     };
 
     minusFilter = function(li){
-      filter_name = document.querySelector(".dropdown_filter").value;
+      filter_name = li.querySelector(".dropdown_filter").value;
       li.remove();
       filter_index = user_filters.indexOf(filter_name);
       user_filters.splice(filter_index, 1);
@@ -589,15 +600,18 @@ var MapTable = (function (d3, queue) {
 
     checkReachMaxFilters = function(){
       if(getRemainingFilters().length == 0){
-        displayNewFilter = "none";
+        disableNewFilter = true;
       }
       else{
-        displayNewFilter = "block";
+        disableNewFilter = false;
       }
+      document.querySelector(options.filters_new_filter_selector + " .btn").disabled = disableNewFilter;
 
-      document.querySelector(options.filters_new_filter_selector).style.display = displayNewFilter;
+      btns = document.querySelectorAll(".btn-plus");
+      for(i=0;i<btns.length;i++){
+        btns[i].disabled = disableNewFilter;
+      };
     };
-
     appendNewFilter = function(){
       document.querySelector(options.filters_new_filter_selector).innerHTML = "";
       add_filter_link = document.createElement("button");
@@ -606,9 +620,19 @@ var MapTable = (function (d3, queue) {
       add_filter_link.addEventListener("click", methods.newFilter);
 
       document.querySelector(options.filters_new_filter_selector).appendChild(add_filter_link);
-    }
+    };
+    appendReset = function(){
+      document.querySelector(options.filters_reset_selector).innerHTML = "";
+      add_filter_link = document.createElement("button");
+      add_filter_link.setAttribute("class", "btn");
+      add_filter_link.innerText = "↺ Reset";
+      add_filter_link.addEventListener("click", methods.reset);
+
+      document.querySelector(options.filters_reset_selector).appendChild(add_filter_link);
+    };
 
     appendNewFilter();
+    appendReset();
     methods.newFilter();
     return methods;
   };
