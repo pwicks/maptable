@@ -402,18 +402,26 @@ var MapTable = (function (d3, queue) {
           filter_value = li.querySelector(".input_value").value;
           filter_options = filterOptions(filter_name);
           if(filter_value == "") continue;
-          if(filter_options.filter == "field" || filter_options.filter == "dropdown"){
+          if(filter_options.filter == "dropdown"){
             if(d[filter_name] != filter_value) return false;
+          }
+          else if(filter_options.filter == "field"){
+            if(d[filter_name].toLowerCase().indexOf(filter_value.toLowerCase()) === -1) return false;
           }
           else if(filter_options.filter == "number"){
             filter_range = li.querySelector(".dropdown_range").value;
             if(!rangeToBool(d[filter_name], filter_range,  filter_value)) return false;
           }
-          /*
           else if(filter_options.filter == "date"){
-            return rangeToBool(d[filter_name], filter_range,  filter_value);
+            if(d[filter_name] == "") return false;
+            filter_range = li.querySelector(".dropdown_range").value;
+            if(!rangeToBool(
+              Date.parse(d[filter_name]), 
+              filter_range, 
+              Date.parse(filter_value)
+              )
+            ) return false;
           }
-          */
         };
         return true; 
       }
@@ -457,7 +465,7 @@ var MapTable = (function (d3, queue) {
       }
       row.appendChild(filter_verb);
 
-      // Fitler range
+      // Filter range
       if(filter_options.filter != "field" && filter_options.filter != "dropdown"){
         filter_range = document.createElement("select");
         filter_range.setAttribute("class", "dropdown_range");
