@@ -134,14 +134,14 @@ var MapTable = (function (d3, queue) {
   transY = 0;
 
   redraw = function(){
-    scale = d3.event.scale;
-    transX = (scale == 1) ? 0 : d3.event.translate[0];
-    transY = (scale == 1) ? 0 : d3.event.translate[1];
-
+    if(d3.event != null){
+      scale = d3.event.scale;
+      transX = (scale == 1) ? 0 : d3.event.translate[0];
+      transY = (scale == 1) ? 0 : d3.event.translate[1];
+    }
     data = buildData();
     renderTable(data);
     renderMarkers(data);
-
     renderScaledMap();
     renderScaledMarkers();
   };
@@ -172,8 +172,11 @@ var MapTable = (function (d3, queue) {
     else if (transX < minTransX) {
       transX = minTransX;
     }
-    d3.event.translate[0] = transX;
-    d3.event.translate[1] = transY;
+
+    if(d3.event != null){
+      d3.event.translate[0] = transX;
+      d3.event.translate[1] = transY;
+    }
 
     svg.attr("transform", "translate(" + transX + ", " + transY + ")scale(" + scale + ")");
 
@@ -275,11 +278,7 @@ var MapTable = (function (d3, queue) {
   buildData = function(){
     boundaries = getBoundaries();
     data = rawData;
-    /*
-    if (dynatable.settings.dataset.originalRecords.length > 0){
-      data = dynatable.settings.dataset.records;
-    }
-    */
+
     data = data.filter(function(d){
       if(scale == 1) return true;
       return (
@@ -290,8 +289,28 @@ var MapTable = (function (d3, queue) {
         && boundaries.se[1] < d.latitude
       );
     });
+
+    if(filters){
+      data = data.filter(filters.checkWithFilter);
+    }
     return data;
   };
+
+
+  rangeToBool = function(el1, range, el2){
+    if(range == "="){
+      return parseInt(el1) == parseInt(el2);
+    }
+    else if(range == ">"){
+      return parseInt(el1) >= parseInt(el2);
+    }
+    else if(range == "<"){
+      return parseInt(el1) <= parseInt(el2);
+    }
+    else{
+      return true;
+    }
+  }
 
   renderMarkers = function(data){
     // Enter
@@ -373,8 +392,34 @@ var MapTable = (function (d3, queue) {
           li[0].parentNode.removeChild(li[0]);
         }
         checkReachMaxFilters();
+        redraw();
+      },
+      checkWithFilter : function(d){
+        filter_elements = document.getElementsByClassName("filter_element");
+        for(i=0;i<filter_elements.length;i++){
+          li = filter_elements[i];
+          filter_name = li.querySelector(".dropdown_filter").value;
+          filter_value = li.querySelector(".input_value").value;
+          filter_options = filterOptions(filter_name);
+          if(filter_value == "") continue;
+          if(filter_options.filter == "field" || filter_options.filter == "dropdown"){
+            if(d[filter_name] != filter_value) return false;
+          }
+          else if(filter_options.filter == "number"){
+            filter_range = li.querySelector(".dropdown_range").value;
+            if(!rangeToBool(d[filter_name], filter_range,  filter_value)) return false;
+          }
+          /*
+          else if(filter_options.filter == "date"){
+            return rangeToBool(d[filter_name], filter_range,  filter_value);
+          }
+          */
+        };
+        return true; 
       }
     };
+
+    
 
     buildRow = function(filter_name){
       var remaining_filters = getRemainingFilters();
@@ -399,6 +444,7 @@ var MapTable = (function (d3, queue) {
       filter_select.addEventListener("change", function(select){
         changeFilter(this);
       });
+      filter_select.addEventListener("change", redraw);
       row.appendChild(filter_select);
 
       // Filter verb
@@ -424,6 +470,7 @@ var MapTable = (function (d3, queue) {
         filter_range.addEventListener("change", function(){
           changeRange(this);
         });
+        filter_range.addEventListener("change", redraw);
         row.appendChild(filter_range);
 
         // Little space:
@@ -443,6 +490,7 @@ var MapTable = (function (d3, queue) {
         else{
           filter_value.setAttribute("type", "text");
         }
+        filter_value.addEventListener("keyup", redraw);
       }
       else{
         filter_value = document.createElement("select");
@@ -452,7 +500,7 @@ var MapTable = (function (d3, queue) {
           return d[filter_name]
         })
         .sortKeys(d3.ascending)
-        .entries(buildData());
+        .entries(rawData);
 
         option = document.createElement("option");
         option.value = "";
@@ -464,7 +512,9 @@ var MapTable = (function (d3, queue) {
           option.value = d.key;
           option.innerText = d.key;
           filter_value.appendChild(option);
-        })
+        });
+        filter_value.addEventListener("change", redraw);
+
 
       }
       filter_value.setAttribute("class", "input_value");
