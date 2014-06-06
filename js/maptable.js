@@ -478,6 +478,14 @@ var MapTable = (function (d3, queue) {
 
       appendButtons(row, filter_name);
 
+      // Filter verb
+      filter_and = document.createElement("span");
+      filter_and.setAttribute("class", "text and_filter");
+      filter_and.innerText = "And ";
+      row.appendChild(filter_and);
+
+
+
       // Filter select
       filter_select = document.createElement("select");
       filter_select.setAttribute("class", "dropdown_filter");
@@ -493,6 +501,7 @@ var MapTable = (function (d3, queue) {
 
       // Filter verb
       filter_verb = document.createElement("span");
+      filter_verb.setAttribute("class", "text");
       if(filter_options.filter == "field"){
         filter_verb.innerText = " contains ";
       }
@@ -700,6 +709,8 @@ var MapTable = (function (d3, queue) {
         disableNewFilter = false;
       }
       document.querySelector(options.filters_new_filter_selector + " .btn").disabled = disableNewFilter;
+
+
 
       btns = document.querySelectorAll(".btn-plus");
       for(i=0;i<btns.length;i++){
