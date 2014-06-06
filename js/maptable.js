@@ -96,6 +96,7 @@ var MapTable = (function (d3, queue) {
     radius_point : 3,
     tooltip_marker : true,
     tooltip_country : false,
+    fit_content_margin: 5,
     scale_zoom : [1, 25],
     range_values : [
       {
@@ -394,6 +395,41 @@ var MapTable = (function (d3, queue) {
         checkReachMaxFilters();
         redraw();
       },
+      fitContent: function(){
+        data = buildData();
+        hor = d3.extent(data, function(d) { return d.x; });
+        ver = d3.extent(data, function(d) { return d.y; });
+
+        // center dots with the good ratio
+        ratio = options.width/options.height;
+        currentW = hor[1] - hor[0];
+        currentH = ver[1] - ver[0];
+
+        realH = currentW/ratio;
+        realW = currentH*ratio;
+
+        diff_margin_width = 0;
+        diff_margin_height = 0;
+
+        if(realW >= currentW){
+          diff_margin_width = (realW - currentW)/2;
+        }
+        else{
+          diff_margin_height = (realH - currentH)/2;
+        }
+
+        // add layout margin
+        hor[0] -= options.fit_content_margin + diff_margin_width;
+        hor[1] += options.fit_content_margin + diff_margin_width;
+        ver[0] -= options.fit_content_margin + diff_margin_height;
+        ver[1] += options.fit_content_margin + diff_margin_height;
+
+        scale = options.width / (hor[1] - hor[0]);
+        transX = -1*hor[0]*scale;
+        transY = -1*ver[0]*scale;
+
+        redraw();
+      },
       checkWithFilter : function(d){
         filter_elements = document.getElementsByClassName("filter_element");
         for(i=0;i<filter_elements.length;i++){
@@ -672,22 +708,35 @@ var MapTable = (function (d3, queue) {
     };
     appendNewFilter = function(){
       document.querySelector(options.filters_new_filter_selector).innerHTML = "";
-      add_filter_link = document.createElement("button");
-      add_filter_link.setAttribute("class", "btn");
-      add_filter_link.innerText = "+ New filter";
-      add_filter_link.addEventListener("click", methods.newFilter);
+      new_filter_btn = document.createElement("button");
+      new_filter_btn.setAttribute("class", "btn");
+      new_filter_btn.innerText = "+ New filter";
+      new_filter_btn.addEventListener("click", methods.newFilter);
 
-      document.querySelector(options.filters_new_filter_selector).appendChild(add_filter_link);
+      document.querySelector(options.filters_new_filter_selector).appendChild(new_filter_btn);
     };
     appendReset = function(){
       document.querySelector(options.filters_reset_selector).innerHTML = "";
-      add_filter_link = document.createElement("button");
-      add_filter_link.setAttribute("class", "btn");
-      add_filter_link.innerText = "↺ Reset";
-      add_filter_link.addEventListener("click", methods.reset);
+    
+      reset_btn = document.createElement("button");
+      reset_btn.setAttribute("class", "btn");
+      reset_btn.innerText = "↺ Reset";
+      reset_btn.addEventListener("click", methods.reset);
 
-      document.querySelector(options.filters_reset_selector).appendChild(add_filter_link);
+      fit_content_btn = document.createElement("button");
+      fit_content_btn.setAttribute("class", "btn");
+      fit_content_btn.innerText = "⇱ Fit to content";
+      fit_content_btn.addEventListener("click", methods.fitContent);
+
+
+      document.querySelector(options.filters_reset_selector).appendChild(reset_btn);
+
+      document.querySelector(options.filters_reset_selector).appendChild(document.createTextNode(" "));
+
+      document.querySelector(options.filters_reset_selector).appendChild(fit_content_btn);
+
     };
+
 
     appendNewFilter();
     appendReset();
