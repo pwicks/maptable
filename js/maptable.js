@@ -91,7 +91,7 @@ var MapTable = (function (d3, queue) {
     table_class: "table table-stripped",
     marker_class: "marker",
     tooltip_class: "tooltip",
-    map_json_path : "data/world-110m.json",
+    map_json_path : "data/world-110m-boundaries.json",
     countries_name_tsv_path : "data/country-names.tsv",
     radius_point : 3,
     tooltip_marker : true,
@@ -195,7 +195,7 @@ var MapTable = (function (d3, queue) {
 
   buildBaseMap = function(error, world, names){
     
-    var countries = topojson.object(world, world.objects.countries).geometries,
+    var countries = topojson.object(world, world.objects.world_output).geometries,
       neighbors = topojson.neighbors(world, countries),
       i = -1,
       n = countries.length;
