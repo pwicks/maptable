@@ -120,6 +120,28 @@ div.tooltip {
   cursor:pointer;
 }
 
+.column_header{
+  cursor:pointer;
+}
+.column_header:hover{
+  text-decoration: underline;
+}
+
+
+.column_header.sort_asc{
+  color:#08C;
+}
+.column_header.sort_desc{
+  color:#08C;
+}
+
+.column_header.sort_asc:after{
+  content: " ▲";
+}
+.column_header.sort_desc:after{
+  content: " ▼";
+}
+
 .filter_element:first-child .and_filter{
   display: none;
 }

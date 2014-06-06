@@ -54,7 +54,24 @@
           {
             id: "traffic",
             displayName: "Traffic",
-            filter: "number"
+            filter: "custom",
+            format: function(d){
+              if(d.indexOf("K") !== -1){
+                return parseInt(d)*Math.pow(10,3);
+              }
+              else if(d.indexOf("M") !== -1){
+                return parseInt(d)*Math.pow(10,6);
+              }
+              else if(d.indexOf("G") !== -1){
+                return parseInt(d)*Math.pow(10,9);
+              }
+              else if(d.indexOf("T") !== -1){
+                return parseInt(d)*Math.pow(10,12);
+              }
+              else {
+                return parseInt(d);
+              }
+            }
           },
           {
             id: "prefixes",
@@ -67,6 +84,7 @@
             filter: "date"
           }
         ],
+        default_sorting: {id:"city", mode:"asc"},
         tooltip_marker_content : function(d){
           return "<strong>" + d.formattedAddress + "</strong> <br> <strong>Participants:</strong> " + d.participants + "<br> <strong>Traffic:</strong> " + d.traffic + "";
         },

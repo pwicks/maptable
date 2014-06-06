@@ -63,8 +63,16 @@ var MapTable = (function (d3, queue) {
           .data(options.table_columns)
           .enter()
           .append("th")
-          .html(function(d){
+          .append("span")
+          .attr("class", "column_header")
+          .attr("id", function(d){
+            return "column_header_" + d.id;
+          })
+          .text(function(d){
             return d.displayName;
+          })
+          .on("click", function(d){
+              sortColumn(d.id);
           });
 
       // Download Data
@@ -123,6 +131,8 @@ var MapTable = (function (d3, queue) {
   table_body,
   filters;
 
+  currentSorting = [];
+
   rawData = [];
 
   scale = 1;
@@ -135,7 +145,7 @@ var MapTable = (function (d3, queue) {
   transY = 0;
 
   redraw = function(){
-    if(d3.event != null){
+    if(d3.event != null && typeof(d3.event.translate) != "undefined"){
       scale = d3.event.scale;
       transX = (scale == 1) ? 0 : d3.event.translate[0];
       transY = (scale == 1) ? 0 : d3.event.translate[1];
@@ -174,7 +184,7 @@ var MapTable = (function (d3, queue) {
       transX = minTransX;
     }
 
-    if(d3.event != null){
+    if(d3.event != null && typeof(d3.event.translate) != "undefined"){
       d3.event.translate[0] = transX;
       d3.event.translate[1] = transY;
     }
@@ -268,6 +278,9 @@ var MapTable = (function (d3, queue) {
         return d;
       });
 
+      if(options.default_sorting){        
+        sortColumn(options.default_sorting.id, options.default_sorting.mode);
+      }
       data = buildData();
       renderTable(data);
       renderMarkers(data);
@@ -294,6 +307,32 @@ var MapTable = (function (d3, queue) {
     if(filters){
       data = data.filter(filters.checkWithFilter);
     }
+
+    if(currentSorting){
+      mode = (currentSorting.mode == "asc") ? d3.ascending : d3.descending;
+      filter_options = filterOptions(currentSorting.id);
+      data = data.sort(function(a,b) {
+
+        el1 = a[currentSorting.id];
+        el2 = b[currentSorting.id];
+
+        if(filter_options.filter == "number"){
+          el1 = parseInt(el1);
+          el2 = parseInt(el2);
+        }
+        else if(filter_options.filter == "date"){
+          el1 = Date.parse(el1);
+          el2 = Date.parse(el2);
+        }
+        else if(filter_options.filter == "custom"){
+          el1 = filter_options.format(el1);
+          el2 = filter_options.format(el2);
+        }
+
+        return mode(el1, el2);
+      });
+    }
+
     return data;
   };
 
@@ -372,6 +411,38 @@ var MapTable = (function (d3, queue) {
       });
   };
 
+  sortColumn = function(column_id, mode){
+    if(column_id == currentSorting.id){
+      if(currentSorting.mode == "asc"){
+        mode = "desc"; 
+      }
+      else{
+        mode = "asc";
+      }
+    }
+    if(!mode) mode = "desc";
+
+    currentSorting = {id: column_id, mode: mode};
+    column_headers = document.getElementsByClassName('column_header');
+    for(var i=0; i<column_headers.length; i++){
+      column_headers[i].setAttribute("class", "column_header");
+    }
+    document.getElementById('column_header_' + column_id).setAttribute("class", "column_header sort_"+mode);
+
+    redraw();
+  };
+  
+  filterOptions = function(filter_name){
+    obj = null;
+    options.table_columns.forEach(function(f){
+      if(f.id == filter_name){
+        obj = f;
+      }
+      return;
+    });
+    return obj;
+  };
+
   loadFilters = function(){
     var user_filters = [];
 
@@ -447,6 +518,14 @@ var MapTable = (function (d3, queue) {
           else if(filter_options.filter == "number"){
             filter_range = li.querySelector(".dropdown_range").value;
             if(!rangeToBool(d[filter_name], filter_range,  filter_value)) return false;
+          }
+          else if(filter_options.filter == "custom"){
+            filter_range = li.querySelector(".dropdown_range").value;
+            if(!rangeToBool(
+              filter_options.format(d[filter_name]),
+              filter_range,
+              filter_options.format(filter_value))
+            ) return false;
           }
           else if(filter_options.filter == "date"){
             if(d[filter_name] == "") return false;
@@ -580,17 +659,6 @@ var MapTable = (function (d3, queue) {
 
 
       return {node: row, name: filter_name};
-    };
-
-    filterOptions = function(filter_name){
-      obj = null;
-      options.table_columns.forEach(function(f){
-        if(f.id == filter_name){
-          obj = f;
-        }
-        return;
-      });
-      return obj;
     };
 
     changeRange = function(filter_range){
