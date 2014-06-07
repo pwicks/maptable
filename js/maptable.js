@@ -96,7 +96,7 @@ var MapTable = (function (d3, queue) {
     table_container: "#table",
     filters_new_filter_selector: "#filters_new_filter",
     filters_reset_selector: "#filters_reset",
-    table_class: "table table-stripped",
+    table_class: "table table-striped",
     marker_class: "marker",
     tooltip_class: "tooltip",
     map_json_path : "data/world-110m.json",
@@ -431,7 +431,7 @@ var MapTable = (function (d3, queue) {
 
     redraw();
   };
-  
+
   filterOptions = function(filter_name){
     obj = null;
     options.table_columns.forEach(function(f){
