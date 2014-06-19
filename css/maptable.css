@@ -14,6 +14,11 @@ body {
 .country:hover{
   opacity:0.9;
 }
+.relief {
+  fill: #eee;
+  stroke: transparent;
+  stroke-width: 0px;
+}
 div.tooltip {
   color: #222; 
   background: #fff; 

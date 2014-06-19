@@ -19,11 +19,18 @@ var MapTable = (function (d3, queue) {
         .append("div")
         .attr("class", options.tooltip_class)
         .style("display", "none");
+
+      // Add watermark
+      if(options.watermark_class){
+        d3.select(options.map_selector)
+                .append("div")
+                .attr("class", options.watermark_class);
+      }
   
       // Load projection
       projection = d3.geo.equirectangular()
-                      .scale((options.width / 640) * 100)
-                      .translate([options.width / 2, options.height / 2]);
+                      .scale((options.width / 680) * 100)
+                      .rotate([-11,0]).precision(0.1);
 
       // Prepare colors
       if(options.color_range != null ){
@@ -36,14 +43,26 @@ var MapTable = (function (d3, queue) {
         color = d3.scale.category10();
       }
 
+      // Prepare zoom listerner
+      zoomListener = d3.behavior
+      .zoom()
+      .scaleExtent(options.scale_zoom)
+        .on("zoom", redraw);
+
       // Create Svg
       svg = d3.select(options.map_selector)
               .append("svg")
               .attr("width", options.width)
               .attr("height", options.height)
-              .call(d3.behavior.zoom().scaleExtent(options.scale_zoom)
-                .on("zoom", redraw))
+              .call(zoomListener)
               .append("g");
+
+      // Create a gaussian blur filter
+      var filter = svg.append("defs")
+        .append("filter")
+          .attr("id", "blur")
+        .append("feGaussianBlur")
+          .attr("stdDeviation", 0.4);
 
       // Build Table header
 
@@ -75,11 +94,16 @@ var MapTable = (function (d3, queue) {
               sortColumn(d.id);
           });
 
-      // Download Data
+      // Download Country Data
       queue()
         .defer(d3.json, options.map_json_path)
         .defer(d3.tsv, options.countries_name_tsv_path)
         .await(buildBaseMap);
+
+      // Download shaded relief vector data and call buildOverlayMap to add it to the SVG.
+      queue()
+        .defer(d3.json, options.sr_json_path)
+        .await(buildOverlayMap);
     },
 
     addFilter : function(){
@@ -91,7 +115,7 @@ var MapTable = (function (d3, queue) {
 
   default_options = {
     width: 900,
-    height: 450,
+    height: 390,
     map_selector: "#map",
     table_container: "#table",
     filters_new_filter_selector: "#filters_new_filter",
@@ -99,32 +123,35 @@ var MapTable = (function (d3, queue) {
     table_class: "table table-striped",
     marker_class: "marker",
     tooltip_class: "tooltip",
-    map_json_path : "data/world-110m.json",
+    map_json_path : "data/countries.topo.json",
+    sr_json_path : "data/shaded_relief.topo.json", 
     countries_name_tsv_path : "data/country-names.tsv",
     radius_point : 3,
     tooltip_marker : true,
     tooltip_country : false,
-    fit_content_margin: 5,
-    scale_zoom : [1, 25],
+    fit_content_margin: 10,
+    scale_zoom : [1, 10],
+    animation_duration: 750,
     range_values : [
       {
         value: "",
-        text: "Any"
+        text: "any"
       }, {
         value: "<",
-        text: "Less than"
+        text: "less than"
       }, {
         value: "=",
-        text: "Exactly"
+        text: "exactly"
       }, {
         value: ">",
-        text: "More than"
+        text: "more than"
       }
     ]
   };
 
   var options = {},
   tooltip,
+  zoomListener,
   svg,
   projection,
   color,
@@ -144,13 +171,28 @@ var MapTable = (function (d3, queue) {
   transX = 0;
   transY = 0;
 
-  redraw = function(){
+  redraw = function(filter_using_frame){
     if(d3.event != null && typeof(d3.event.translate) != "undefined"){
       scale = d3.event.scale;
       transX = (scale == 1) ? 0 : d3.event.translate[0];
       transY = (scale == 1) ? 0 : d3.event.translate[1];
     }
-    data = buildData();
+    data = buildData(filter_using_frame);
+
+    // Build Title
+    if(document.querySelector(options.title_selector)){
+      showing = data.length;
+      total = rawData.length;
+      inline_filters = "";
+
+      if(filters){
+        inline_filters = filters.inlineFilters();
+      }
+
+      document.querySelector(options.title_selector).innerHTML = options.title_format(showing, total, inline_filters);
+    }
+
+
     renderTable(data);
     renderMarkers(data);
     renderScaledMap();
@@ -164,7 +206,7 @@ var MapTable = (function (d3, queue) {
     return {"nw": projection.invert(nw), "se": projection.invert(se)};
   };
 
-  renderScaledMap = function(){
+  renderScaledMap = function(withTransition){
     var maxTransX = 0,
       maxTransY = 0,
       minTransX = options.width * (1 - scale),
@@ -189,7 +231,11 @@ var MapTable = (function (d3, queue) {
       d3.event.translate[1] = transY;
     }
 
-    svg.attr("transform", "translate(" + transX + ", " + transY + ")scale(" + scale + ")");
+    g = svg;
+    if(withTransition){
+      g = svg.transition().ease('cubic-inOut').duration(options.animation_duration);
+    }
+    g.attr("transform", "translate(" + transX + ", " + transY + ")scale(" + scale + ")");
 
   };
 
@@ -240,8 +286,31 @@ var MapTable = (function (d3, queue) {
     }
 
     loadData();
-
   };
+
+ /**
+  * Adds a shaded relief map overlay to the base layer. Called by a Queue object in MapTable.module.init().
+  * @param {string} error 
+  * @param {Object} Shaded relief TopoJSON data, loaded via Queue  
+  * @return {Null} Sets topography object, marshalling SVG elements; does not return a response.  
+  */
+  buildOverlayMap = function(error, relief) {
+    var hillshading = topojson.object(relief, relief.objects.world_110m_geo).geometries,
+      i = -1,
+      n = hillshading.length;
+    topography = svg.selectAll(".relief").data(hillshading);
+    topography
+      .enter()
+      .insert("path")
+      .attr("class", "relief")
+      .attr("title", "mountain")
+      .attr("d", d3.geo.path().projection(projection))
+      .style("fill", "#000")
+      .style("fill-rule", "nonzero")
+      .style("stroke-opacity", "0")
+      .style("fill-opacity", "0.3")
+      .attr("filter", "url(#blur)");
+  }
 
   tooltipPosition = function(mouse){
     return "left:" + (mouse[0] + 5) + "px;top:" + (mouse[1] + 10) + "px";
@@ -289,20 +358,22 @@ var MapTable = (function (d3, queue) {
     });
   };
 
-  buildData = function(){
+  buildData = function(filter_using_frame){
     boundaries = getBoundaries();
     data = rawData;
 
-    data = data.filter(function(d){
-      if(scale == 1) return true;
-      return (
-        boundaries.nw[0] < d.longitude 
-        && boundaries.se[0] > d.longitude
-      ) && (
-        boundaries.nw[1] > d.latitude 
-        && boundaries.se[1] < d.latitude
-      );
-    });
+    if(filter_using_frame !== true){
+      data = data.filter(function(d){
+        if(scale == 1) return true;
+        return (
+          boundaries.nw[0] < d.longitude 
+          && boundaries.se[0] > d.longitude
+        ) && (
+          boundaries.nw[1] > d.latitude 
+          && boundaries.se[1] < d.latitude
+        );
+      });
+    }
 
     if(filters){
       data = data.filter(filters.checkWithFilter);
@@ -400,12 +471,24 @@ var MapTable = (function (d3, queue) {
     .remove();
 
     // Update
+    prev = [];
     table_body.selectAll("tr")
       .data(data)
       .html(function (row) {
         tds = "";
         options.table_columns.forEach(function (column) {
-          tds += "<td>" + row[column.id] + "</td>";
+          if(!column.grouping){
+            tds += "<td>" + row[column.id] + "</td>";
+          } 
+          else{
+            if((prev[column.id] && prev[column.id] == row[column.id])){
+              tds += "<td></td>";
+            }
+            else{
+              tds += "<td>" + row[column.id] + "</td>";
+              prev[column.id] = row[column.id]
+            }
+          }
         });
         return tds;
       });
@@ -464,43 +547,19 @@ var MapTable = (function (d3, queue) {
           li[0].parentNode.removeChild(li[0]);
         }
         checkReachMaxFilters();
-        redraw();
-      },
-      fitContent: function(){
-        data = buildData();
-        hor = d3.extent(data, function(d) { return d.x; });
-        ver = d3.extent(data, function(d) { return d.y; });
 
-        // center dots with the good ratio
-        ratio = options.width/options.height;
-        currentW = hor[1] - hor[0];
-        currentH = ver[1] - ver[0];
+        transX = 0;
+        transY = 0;
+        scale = 1;
 
-        realH = currentW/ratio;
-        realW = currentH*ratio;
+        zoomListener.translate([transX,transY]).scale(scale);
 
-        diff_margin_width = 0;
-        diff_margin_height = 0;
+        renderScaledMap(true);
+        renderScaledMarkers();
 
-        if(realW >= currentW){
-          diff_margin_width = (realW - currentW)/2;
-        }
-        else{
-          diff_margin_height = (realH - currentH)/2;
-        }
-
-        // add layout margin
-        hor[0] -= options.fit_content_margin + diff_margin_width;
-        hor[1] += options.fit_content_margin + diff_margin_width;
-        ver[0] -= options.fit_content_margin + diff_margin_height;
-        ver[1] += options.fit_content_margin + diff_margin_height;
-
-        scale = options.width / (hor[1] - hor[0]);
-        transX = -1*hor[0]*scale;
-        transY = -1*ver[0]*scale;
-
-        redraw();
-      },
+        window.setTimeout(redraw,options.animation_duration);
+      }
+      ,
       checkWithFilter : function(d){
         filter_elements = document.getElementsByClassName("filter_element");
         for(i=0;i<filter_elements.length;i++){
@@ -539,10 +598,85 @@ var MapTable = (function (d3, queue) {
           }
         };
         return true; 
+      },
+      inlineFilters : function(){
+        var output_array = [];
+
+        var filter_elements = document.getElementsByClassName("filter_element");
+
+        for(i=0;i<filter_elements.length;i++){
+          li = filter_elements[i];
+          filter_name = li.querySelector(".dropdown_filter").value;
+          filter_value = li.querySelector(".input_value").value;
+          filter_options = filterOptions(filter_name);
+          if(filter_value == "") continue;
+
+          var out = filter_options.displayName + " ";
+
+          if(filter_options.filter == "field"){
+            out += "contains ";
+          }
+          else{
+            out += "is ";
+          }
+
+          if(filter_options.filter == "number" || filter_options.filter == "date"){
+            filter_range_select = li.querySelector(".dropdown_range");
+            if(filter_range_select.value != ""){
+              out += filter_range_select.options[filter_range_select.selectedIndex].text + " ";
+            }
+          }
+
+          out += "<b>" + filter_value + "</b>";
+
+          output_array.push(out);
+        }
+        return output_array.join(", ");
       }
     };
 
-    
+    fitContent= function(){
+
+      data = buildData(true);
+      hor = d3.extent(data, function(d) { return d.x; });
+      ver = d3.extent(data, function(d) { return d.y; });
+
+      // center dots with the good ratio
+      ratio = options.width/options.height;
+
+      // We add options.radius_point*2 to fit until the right/bottom part of the marker
+      currentW = (hor[1] - hor[0]) + options.radius_point*2;
+      currentH = (ver[1] - ver[0]) + options.radius_point*2;
+
+      realH = currentW/ratio;
+      realW = currentH*ratio;
+
+      diff_margin_width = 0;
+      diff_margin_height = 0;
+
+      if(realW >= currentW){
+        diff_margin_width = (realW - currentW)/2;
+      }
+      else{
+        diff_margin_height = (realH - currentH)/2;
+      }
+
+      // add layout margin
+      hor[0] -= (options.fit_content_margin + diff_margin_width);
+      hor[1] += (options.fit_content_margin + diff_margin_width);
+      ver[0] -= (options.fit_content_margin + diff_margin_height);
+      ver[1] += (options.fit_content_margin + diff_margin_height);
+
+      scale = options.width / (hor[1] - hor[0]);
+      transX = -1*hor[0]*scale;
+      transY = -1*ver[0]*scale;
+
+      zoomListener.translate([transX,transY]).scale(scale);
+
+      renderScaledMap(true);
+      renderScaledMarkers();
+
+    };
 
     buildRow = function(filter_name){
       var remaining_filters = getRemainingFilters();
@@ -550,15 +684,16 @@ var MapTable = (function (d3, queue) {
       if(remaining_filters.length == 0) return {node: null, name: null};
 
       if(typeof(filter_name) !== "string") filter_name = remaining_filters[0].id;
-      filter_options = filterOptions(filter_name);
+      
+      var filter_options = filterOptions(filter_name);
 
-      row = document.createElement("li");
+      var row = document.createElement("li");
       row.setAttribute("class", "filter_element");
 
       appendButtons(row, filter_name);
 
       // Filter verb
-      filter_and = document.createElement("span");
+      var filter_and = document.createElement("span");
       filter_and.setAttribute("class", "text and_filter");
       filter_and.innerText = "And ";
       row.appendChild(filter_and);
@@ -566,7 +701,7 @@ var MapTable = (function (d3, queue) {
 
 
       // Filter select
-      filter_select = document.createElement("select");
+      var filter_select = document.createElement("select");
       filter_select.setAttribute("class", "dropdown_filter");
       filter_select.setAttribute("data-current", filter_name);
       filter_select = appendOptions(filter_select, remaining_filters);
@@ -579,7 +714,7 @@ var MapTable = (function (d3, queue) {
       row.appendChild(filter_select);
 
       // Filter verb
-      filter_verb = document.createElement("span");
+      var filter_verb = document.createElement("span");
       filter_verb.setAttribute("class", "text");
       if(filter_options.filter == "field"){
         filter_verb.innerText = " contains ";
@@ -591,7 +726,7 @@ var MapTable = (function (d3, queue) {
 
       // Filter range
       if(filter_options.filter != "field" && filter_options.filter != "dropdown"){
-        filter_range = document.createElement("select");
+        var filter_range = document.createElement("select");
         filter_range.setAttribute("class", "dropdown_range");
         options.range_values.forEach(function(r){
           option = document.createElement("option");
@@ -602,7 +737,10 @@ var MapTable = (function (d3, queue) {
         filter_range.addEventListener("change", function(){
           changeRange(this);
         });
-        filter_range.addEventListener("change", redraw);
+        filter_range.addEventListener("change", function(){
+          redraw(true);
+          fitContent(true);
+        });
         row.appendChild(filter_range);
 
         // Little space:
@@ -612,7 +750,7 @@ var MapTable = (function (d3, queue) {
 
       // Filter value
       if(filter_options.filter != "dropdown"){
-        filter_value = document.createElement("input");
+        var filter_value = document.createElement("input");
         if(filter_options.filter == "number"){
           filter_value.setAttribute("type", "number");
         }
@@ -623,9 +761,13 @@ var MapTable = (function (d3, queue) {
           filter_value.setAttribute("type", "text");
         }
         filter_value.addEventListener("keyup", redraw);
+        filter_value.addEventListener("change", function(){
+          redraw(true);
+          fitContent(true);
+        });
       }
       else{
-        filter_value = document.createElement("select");
+        var filter_value = document.createElement("select");
 
         unique_values = d3.nest()
         .key(function(d) {
@@ -645,7 +787,10 @@ var MapTable = (function (d3, queue) {
           option.innerText = d.key;
           filter_value.appendChild(option);
         });
-        filter_value.addEventListener("change", redraw);
+        filter_value.addEventListener("change", function(){
+          redraw(true);
+          fitContent(true);
+        });
 
 
       }
@@ -784,6 +929,10 @@ var MapTable = (function (d3, queue) {
       for(i=0;i<btns.length;i++){
         btns[i].disabled = disableNewFilter;
       };
+      
+      document.querySelector('.filters_label').style.display = (user_filters.length == 0) ? "none" : "block";
+      document.querySelector('.btn-reset').style.display = (user_filters.length == 0) ? "none" : "block";
+
     };
     appendNewFilter = function(){
       document.querySelector(options.filters_new_filter_selector).innerHTML = "";
@@ -798,28 +947,19 @@ var MapTable = (function (d3, queue) {
       document.querySelector(options.filters_reset_selector).innerHTML = "";
     
       reset_btn = document.createElement("button");
-      reset_btn.setAttribute("class", "btn");
+      reset_btn.setAttribute("class", "btn btn-reset");
       reset_btn.innerText = "↺ Reset";
       reset_btn.addEventListener("click", methods.reset);
-
-      fit_content_btn = document.createElement("button");
-      fit_content_btn.setAttribute("class", "btn");
-      fit_content_btn.innerText = "⇱ Fit to content";
-      fit_content_btn.addEventListener("click", methods.fitContent);
-
 
       document.querySelector(options.filters_reset_selector).appendChild(reset_btn);
 
       document.querySelector(options.filters_reset_selector).appendChild(document.createTextNode(" "));
-
-      document.querySelector(options.filters_reset_selector).appendChild(fit_content_btn);
-
     };
 
 
     appendNewFilter();
     appendReset();
-    methods.newFilter();
+    checkReachMaxFilters();
     return methods;
   };
 
