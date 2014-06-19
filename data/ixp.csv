@@ -1,0 +1,412 @@
+region,countryL,city,"internetExchangeName",participants,traffic,prefixes,established,url,latitude,longitude,formattedAddress,cityLong,cityShort,countryLong,country
+Africa,Angola,Luanda,"Angola Internet Exchange",10,13M,,2008,,-8.8383333,13.2344444,"Luanda, Angola",Luanda,Luanda,Angola,AO
+Africa,Botswana,Gaborone,"Botswana Internet Exchange",9,,,"Oct 2005",,-24.6580556,25.9122222,"Gaborone, Botswana",Gaborone,Gaborone,Botswana,BW
+Africa,Congo-Brazzaville,Brazzaville,"Congo Brazzaville IX",6,20K,,"10 May 2013",,-4.2666667,15.2833333,"Brazzaville, Congo",Brazzaville,Brazzaville,Congo,CG
+Africa,Congo-Kinshasa,Kinshasa,"Kinshasa Internet Exchange",11,,,"Nov 2002",,-4.3316667,15.3138889,"Kinshasa, Democratic Republic of the Congo",Kinshasa,Kinshasa,"Democratic Republic of the Congo",CD
+Africa,"Cote D'Ivoire",Abidjan,"Côte d'Ivoire Internet Exchange Point",2,97M,,"3 Oct 2013",,5.3166667,-4.0333333,"Abidjan, Côte d'Ivoire",Abidjan,Abidjan,"Côte d'Ivoire",CI
+Africa,Egypt,Cairo,"Cairo Internet Exchange",8,791M,2268,2004,,30.0444196,31.2357116,"Cairo, Cairo Governorate, Egypt",Cairo,Cairo,Egypt,EG
+Africa,Egypt,Cairo,"Middle East Internet eXchange",10,13K,,"May 2007",,30.0444196,31.2357116,"Cairo, Cairo Governorate, Egypt",Cairo,Cairo,Egypt,EG
+Africa,Ghana,Accra,"Ghana Internet Exchange",24,25.5G,,"18 Oct 2005",,5.55,-0.2,"Accra, Ghana",Accra,Accra,Ghana,GH
+Africa,Kenya,Mombasa,"Mombasa Internet Exchange Point",8,,,"Aug 2010",,-4.0434771,39.6682065,"Mombasa, Kenya",Mombasa,Mombasa,Kenya,KE
+Africa,Kenya,Nairobi,"Kenya Internet Exchange Point",29,435M,,2008,,-1.2920659,36.8219462,"Nairobi, Kenya",Nairobi,Nairobi,Kenya,KE
+Africa,Malawi,Blantyre,"Malawi IXP",36,,,"1 Dec 2008",,-15.7861111,35.0058333,"Blantyre, Malawi",Blantyre,Blantyre,Malawi,MW
+Africa,Mauritius,"Port Louis","Mauritius Internet Exchange",6,,,"Dec 2005",,-20.1666667,57.5166667,"Port Louis, Mauritius","Port Louis","Port Louis",Mauritius,MU
+Africa,Mozambique,Maputo,"Mozambique Internet Exchange",17,5M,,"Jul 2002",,-25.9666667,32.5833333,"Maputo, Mozambique",Maputo,Maputo,Mozambique,MZ
+Africa,Namibia,Windhoek,"Windhoek IXP",,,,"7 Mar 2014",,-22.57,17.0836111,"Windhoek, Namibia",Windhoek,Windhoek,Namibia,NA
+Africa,Nigeria,Lagos,"Internet eXchange Point of Nigeria",30,720M,,"May 2007",,6.5243793,3.3792057,"Lagos, Nigeria",Lagos,Lagos,Nigeria,NG
+Africa,Rwanda,Kigali,"Rwanda Internet exchange",5,339M,,2003,,-1.9438889,30.0594444,"Kigali, Rwanda",Kigali,Kigali,Rwanda,RW
+Africa,"South Africa","Cape Town","Cape Town Internet Exchange",23,2.8G,1161,,,-33.9248685,18.4240553,"Cape Town, South Africa","Cape Town","Cape Town","South Africa",ZA
+Africa,"South Africa","Cape Town","NAPAfrica Cape Town",12,1.5G,1868,2012,,-33.9248685,18.4240553,"Cape Town, South Africa","Cape Town","Cape Town","South Africa",ZA
+Africa,"South Africa",Durban,"Durban Internet eXchange",5,20M,10,"14 Sep 2012",,-29.8586804,31.0218404,"Durban, South Africa",Durban,Durban,"South Africa",ZA
+Africa,"South Africa",Johannesburg,"Johannesburg Internet Exchange",57,11.2G,710,"Feb 2008",,-26.2041028,28.0473051,"Johannesburg, South Africa",Johannesburg,Johannesburg,"South Africa",ZA
+Africa,"South Africa",Johannesburg,"NAPAfrica Johannesburg",29,8.6G,,2012,,-26.2041028,28.0473051,"Johannesburg, South Africa",Johannesburg,Johannesburg,"South Africa",ZA
+Africa,Sudan,Khartoum,"Sudan Internet Exchange Point",6,,,,,15.5006544,32.5598994,"Khartoum, Sudan",Khartoum,Khartoum,Sudan,SD
+Africa,Tanzania,Arusha,"Arusha Internet Exchange Point",6,400K,,2009,,-3.388818,36.6849359,"Arusha, Tanzania",Arusha,Arusha,Tanzania,TZ
+Africa,Tanzania,"Dar es Salaam","Tanzania Internet Exchange",22,80.1M,,,,-6.8,39.2833333,"Dar es Salaam, Tanzania","Dar es Salaam",DSM,Tanzania,TZ
+Africa,Tunisia,Tunis,"Tunisian Internet Exchange Point",9,89.6G,,2011,,36.8064948,10.1815316,"Tunis, Tunisia",Tunis,Tunis,Tunisia,TN
+Africa,Uganda,Kampala,"Uganda Internet Exchange",8,218M,,"1 Feb 2013",,0.3136111,32.5811111,"Kampala, Uganda",Kampala,Kampala,Uganda,UG
+Africa,Zambia,Lusaka,"Zambia Internet Exchange Point",13,103M,,2013,,-15.4166667,28.2833333,"Lusaka, Zambia",Lusaka,Lusaka,Zambia,ZM
+Africa,Zimbabwe,Harare,"Zimbabwe Internet Exchange",5,,,"Jul 2001",,-17.8638889,31.0297222,"Harare, Zimbabwe",Harare,Harare,Zimbabwe,ZW
+Asia-Pacific,Australia,Adelaide,"PIPE Networks Adelaide",13,,,2003,,-34.9286212,138.5999594,"Adelaide SA, Australia",Adelaide,Adelaide,Australia,AU
+Asia-Pacific,Australia,Adelaide,"South Australia Internet Exchange",9,359M,,,,-34.9286212,138.5999594,"Adelaide SA, Australia",Adelaide,Adelaide,Australia,AU
+Asia-Pacific,Australia,Brisbane,"PIPE Networks Brisbane",80,,,,,-27.4710107,153.0234489,"Brisbane QLD, Australia",Brisbane,Brisbane,Australia,AU
+Asia-Pacific,Australia,Brisbane,"Queensland Internet Exchange",30,2.2G,,,,-27.4710107,153.0234489,"Brisbane QLD, Australia",Brisbane,Brisbane,Australia,AU
+Asia-Pacific,Australia,Canberra,"ACT Internet Exchange",5,1G,,"1 Oct 2008",,-35.2819998,149.1286843,"Canberra ACT 2601, Australia",Canberra,Canberra,2601,2601
+Asia-Pacific,Australia,Canberra,"PIPE Networks Canberra",2,,,"Jun 2004",,-35.2819998,149.1286843,"Canberra ACT 2601, Australia",Canberra,Canberra,2601,2601
+Asia-Pacific,Australia,Hobart,"PIPE Networks Hobart",8,,,"Aug 2003",,-42.8819032,147.3238148,"Hobart TAS, Australia",Hobart,Hobart,Australia,AU
+Asia-Pacific,Australia,Melbourne,AUSIX,7,20M,,"Jul 2001",,-37.814107,144.96328,"Melbourne VIC, Australia",Melbourne,Melbourne,Australia,AU
+Asia-Pacific,Australia,Melbourne,"PIPE Networks Melbourne",77,,,,,-37.814107,144.96328,"Melbourne VIC, Australia",Melbourne,Melbourne,Australia,AU
+Asia-Pacific,Australia,Melbourne,"Victoria Internet Exchange",31,4.5G,,2011,,-37.814107,144.96328,"Melbourne VIC, Australia",Melbourne,Melbourne,Australia,AU
+Asia-Pacific,Australia,Perth,"Western Australian Internet Association (Inc.)",82,3.46G,29430,,,-31.9530044,115.8574693,"Perth WA, Australia",Perth,Perth,Australia,AU
+Asia-Pacific,Australia,Sydney,"Equinix Sydney",18,108M,5392,2003,,-33.8674869,151.2069902,"Sydney NSW, Australia",Sydney,Sydney,Australia,AU
+Asia-Pacific,Australia,Sydney,"New South Wales IX",16,10.5G,14374,2013,,-33.8674869,151.2069902,"Sydney NSW, Australia",Sydney,Sydney,Australia,AU
+Asia-Pacific,Australia,Sydney,"PIPE Networks Sydney",173,,,,,-33.8674869,151.2069902,"Sydney NSW, Australia",Sydney,Sydney,Australia,AU
+Asia-Pacific,Bangladesh,Dhaka,"Bangladesh Internet Exchange",31,2.73G,1541,"26 Aug 2004",,23.810332,90.4125181,"Dhaka, Bangladesh",Dhaka,Dhaka,Bangladesh,BD
+Asia-Pacific,Bangladesh,Dhaka,"Bangladesh Society of Internet Exchange",,,,"May 2004",,23.810332,90.4125181,"Dhaka, Bangladesh",Dhaka,Dhaka,Bangladesh,BD
+Asia-Pacific,Cambodia,"Phnom Penh","HTN-Cambodia Internet Exchange",,,,2013,,11.5448729,104.8921668,"Phnom Penh, Cambodia","Phnom Penh",PP,Cambodia,KH
+Asia-Pacific,China,Beijing,"Beijing National Internet Exchange Center",11,2G,,"Apr 2000",,39.90403,116.407526,"Beijing, China",Beijing,Beijing,China,CN
+Asia-Pacific,China,"Hong Kong","AMS-IX Hong Kong",14,12G,,"1 Apr 2012",,22.396428,114.109497,"Hong Kong","Hong Kong",HK,"Hong Kong",HK
+Asia-Pacific,China,"Hong Kong","Equinix Hong Kong",,,,2009,,22.396428,114.109497,"Hong Kong","Hong Kong",HK,"Hong Kong",HK
+Asia-Pacific,China,"Hong Kong","Hong Kong Internet Exchange",105,335G,322368,,,22.396428,114.109497,"Hong Kong","Hong Kong",HK,"Hong Kong",HK
+Asia-Pacific,India,Ahmedabad,"National Internet Exchange of India",2,3.1M,,2008,,23.022505,72.5713621,"Ahmedabad, Gujarat, India",Ahmedabad,Ahmedabad,India,IN
+Asia-Pacific,India,Bangalore,"National Internet Exchange of India",8,800K,,2008,,12.9715987,77.5945627,"Bangalore, Karnataka, India",Bangalore,Bangalore,India,IN
+Asia-Pacific,India,Chennai,"National Internet Exchange of India",9,6.2G,,"19 Jul 2003",,13.0524139,80.2508246,"Chennai, Tamil Nadu, India",Chennai,Chennai,India,IN
+Asia-Pacific,India,Hyderabad,"National Internet Exchange of India",7,55M,,2008,,17.385044,78.486671,"Hyderabad, Andhra Pradesh, India",Hyderabad,Hyderabad,India,IN
+Asia-Pacific,India,Kolkata,"National Internet Exchange of India",10,153M,,"19 Jul 2003",,22.572646,88.363895,"Kolkata, West Bengal, India",Kolkata,Kolkata,India,IN
+Asia-Pacific,India,Mumbai,"National Internet Exchange of India",33,21.6G,,"19 Jul 2003",,19.0759837,72.8776559,"Mumbai, Maharashtra, India",Mumbai,Mumbai,India,IN
+Asia-Pacific,India,"New Delhi","National Internet Exchange of India",25,6G,,"19 Jul 2003",,28.635308,77.22496,"New Delhi, Delhi, India","New Delhi","New Delhi",India,IN
+Asia-Pacific,Indonesia,Jakarta,"Biznet Internet Exchange",18,150M,,,,-6.2087634,106.845599,"Jakarta, Indonesia",Jakarta,Jakarta,Indonesia,ID
+Asia-Pacific,Indonesia,Jakarta,"Cyber2 Internet Exchange",1,,,,,-6.2087634,106.845599,"Jakarta, Indonesia",Jakarta,Jakarta,Indonesia,ID
+Asia-Pacific,Indonesia,Jakarta,"Indonesian Internet Exchange",99,3.4G,8596,"Aug 2003",,-6.2087634,106.845599,"Jakarta, Indonesia",Jakarta,Jakarta,Indonesia,ID
+Asia-Pacific,Indonesia,Jakarta,"Matrix Cable System Internet Exchange",70,10G,77184,,,-6.2087634,106.845599,"Jakarta, Indonesia",Jakarta,Jakarta,Indonesia,ID
+Asia-Pacific,Indonesia,Jakarta,"National Inter Connection Exchange",17,,,,,-6.2087634,106.845599,"Jakarta, Indonesia",Jakarta,Jakarta,Indonesia,ID
+Asia-Pacific,Indonesia,Jogjakarta,"Indonesian Internet Exchange",,,,"Mar 2004",,-7.7970684,110.3705267,"Yogyakarta, Yogyakarta City, Yogyakarta, Indonesia",Yogyakarta,Yogyakarta,Indonesia,ID
+Asia-Pacific,Indonesia,Surabaya,"IIX Jawa Timur",11,,,2008,,-7.2642396,112.7455788,"Surabaya, East Java, Indonesia",Surabaya,Surabaya,Indonesia,ID
+Asia-Pacific,Indonesia,Surabaya,"Indonesian Internet Exchange",,,,"Oct 2003",,-7.2642396,112.7455788,"Surabaya, East Java, Indonesia",Surabaya,Surabaya,Indonesia,ID
+Asia-Pacific,Japan,Fukuoka,"BBIX Fukuoka",,,,,,33.5903547,130.4017155,"Fukuoka, Japan",Fukuoka,Fukuoka,Japan,JP
+Asia-Pacific,Japan,Nagoya,BBIX,,,,,,35.1814464,136.906398,"Nagoya, Aichi, Japan",Nagoya,Nagoya,Japan,JP
+Asia-Pacific,Japan,Nagoya,"JPIX Nagoya",11,64G,,,,35.1814464,136.906398,"Nagoya, Aichi, Japan",Nagoya,Nagoya,Japan,JP
+Asia-Pacific,Japan,Osaka,BBIX,,,,,,34.6937378,135.5021651,"Osaka, Osaka Prefecture, Japan",Osaka,Osaka,Japan,JP
+Asia-Pacific,Japan,Osaka,"JPIX Osaka",11,,,"Apr 2002",,34.6937378,135.5021651,"Osaka, Osaka Prefecture, Japan",Osaka,Osaka,Japan,JP
+Asia-Pacific,Japan,Osaka,"JPNAP Osaka",27,67.5G,,2002,,34.6937378,135.5021651,"Osaka, Osaka Prefecture, Japan",Osaka,Osaka,Japan,JP
+Asia-Pacific,Japan,Osaka,NSPIXP-3,23,72G,,"Mar 1997",,34.6937378,135.5021651,"Osaka, Osaka Prefecture, Japan",Osaka,Osaka,Japan,JP
+Asia-Pacific,Japan,Sendai,BBIX,,,,,,38.268215,140.8693558,"Sendai, Miyagi, Japan",Sendai,Sendai,Japan,JP
+Asia-Pacific,Japan,Tokyo,BBIX,,,,2009,,35.6894875,139.6917064,"Tokyo, Japan",Tokyo,Tokyo,Japan,JP
+Asia-Pacific,Japan,Tokyo,"Equinix IBX Tokyo",,,,,,35.6894875,139.6917064,"Tokyo, Japan",Tokyo,Tokyo,Japan,JP
+Asia-Pacific,Japan,Tokyo,"Japan Internet Exchange",128,230G,1857,"Jan 2002",,35.6894875,139.6917064,"Tokyo, Japan",Tokyo,Tokyo,Japan,JP
+Asia-Pacific,Japan,Tokyo,"JPIX Nihonbashi",,,,"Apr 2004",,35.6894875,139.6917064,"Tokyo, Japan",Tokyo,Tokyo,Japan,JP
+Asia-Pacific,Japan,Tokyo,"JPNAP Tokyo I, Otemachi",86,350G,,"Jun 2002",,35.6894875,139.6917064,"Tokyo, Japan",Tokyo,Tokyo,Japan,JP
+Asia-Pacific,Japan,Tokyo,"JPNAP Tokyo II, Ikebukuro",5,28.9G,,"1 Apr 2008",,35.6894875,139.6917064,"Tokyo, Japan",Tokyo,Tokyo,Japan,JP
+Asia-Pacific,Japan,Tokyo,"Network Service Provider IXP (Distributed IX in Edo)",85,22.2G,3839,"Oct 1996",,35.6894875,139.6917064,"Tokyo, Japan",Tokyo,Tokyo,Japan,JP
+Asia-Pacific,Japan,Tokyo,"Network Service Provider IXP-6",51,100M,,"Aug 1999",,35.6894875,139.6917064,"Tokyo, Japan",Tokyo,Tokyo,Japan,JP
+Asia-Pacific,Korea,Seoul,6NGIX,27,,,,,37.566535,126.9779692,"Seoul, South Korea",Seoul,Seoul,"South Korea",KR
+Asia-Pacific,Korea,Seoul,"Korea Internet Neutral Exchange KINX",42,160G,,,,37.566535,126.9779692,"Seoul, South Korea",Seoul,Seoul,"South Korea",KR
+Asia-Pacific,Korea,Seoul,"LGDACOM Internet Exchange",52,70G,,"Oct 1996",,37.566535,126.9779692,"Seoul, South Korea",Seoul,Seoul,"South Korea",KR
+Asia-Pacific,Laos,Vientiane,"Lao National Internet Center",7,1M,,"1 Sep 2010",,17.9666667,102.6,"Vientiane, Laos",Vientiane,Vientiane,Laos,LA
+Asia-Pacific,Malaysia,"Kuala Lumpur","Malaysia Internet Exchange",23,838M,,"15 Dec 2006",,3.139003,101.686855,"Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia","Kuala Lumpur","Kuala Lumpur",Malaysia,MY
+Asia-Pacific,Mongolia,"Ulan Bator","Mongolia Internet Exchange",6,,,"May 2001",,47.92,106.92,"Ulaanbaatar, Mongolia",Ulaanbaatar,Ulaanbaatar,Mongolia,MN
+Asia-Pacific,Nepal,Kathmandu,"Nepal Internet Exchange",25,440G,402,"Aug 2002",,27.7,85.3333333,"Kathmandu 44600, Nepal",Kathmandu,Kathmandu,44600,44600
+Asia-Pacific,"New Zealand",Auckland,"Auckland Peering Exchange",84,,3872,2007,,-36.8484597,174.7633315,"Auckland, New Zealand",Auckland,Auckland,"New Zealand",NZ
+Asia-Pacific,"New Zealand",Christchurch,"Christchurch Internet Exchange",10,,,2007,,-43.5320544,172.6362254,"Christchurch, New Zealand",Christchurch,Christchurch,"New Zealand",NZ
+Asia-Pacific,"New Zealand",Hamilton,"Hamilton Internet Exchange",3,,,,,43.2500208,-79.8660914,"Hamilton, ON, Canada",Hamilton,Hamilton,Canada,CA
+Asia-Pacific,"New Zealand","Palmerston North","Palmerston North Internet Exchange",4,,,"30 Nov 2004",,-40.3523065,175.6082145,"Palmerston North, New Zealand","Palmerston North","Palmerston North","New Zealand",NZ
+Asia-Pacific,"New Zealand",Wellington,"Wellington Internet Exchange",90,540M,3712,2006,,-41.2864603,174.776236,"Wellington, New Zealand",Wellington,Wellington,"New Zealand",NZ
+Asia-Pacific,Pakistan,Karachi,"Zero Point Internet Exchange",4,3.6M,,"10 Jan 2011",,24.8614622,67.0099388,"Karachi, Pakistan",Karachi,Karachi,Pakistan,PK
+Asia-Pacific,Philippines,Manila,"Common Routing Exchange",6,,,,,14.5995124,120.9842195,"Manila, Philippines",Manila,Manila,Philippines,PH
+Asia-Pacific,Philippines,Manila,"Philippine Open Internet Exchange",10,163M,,2007,,14.5995124,120.9842195,"Manila, Philippines",Manila,Manila,Philippines,PH
+Asia-Pacific,Singapore,Singapore,"Equinix Singapore IBX",74,,502499,"26 Apr 2004",,1.352083,103.819836,Singapore,Singapore,SG,Singapore,SG
+Asia-Pacific,Singapore,Singapore,"Singapore Internet Exchange",40,9.9G,12254,"7 Jun 2010",,1.352083,103.819836,Singapore,Singapore,SG,Singapore,SG
+Asia-Pacific,Singapore,Singapore,"Singapore Open Exchange",25,,1182,"Aug 2001",,1.352083,103.819836,Singapore,Singapore,SG,Singapore,SG
+Asia-Pacific,"Sri Lanka",Colombo,"Sri Lanka Internet Exchange",20,,,"1 Jul 2001",,6.9270786,79.861243,"Colombo, Sri Lanka",Colombo,Colombo,"Sri Lanka",LK
+Asia-Pacific,Taiwan,Taipei,"Taipei Internet Exchange",13,60M,,"2 Jul 2002",,25.091075,121.5598345,"Taipei City, Taiwan","Taipei City",北市,Taiwan,TW
+Asia-Pacific,Taiwan,Taipei,"Taiwan Internet Exchange",39,41.2G,,2001,,25.091075,121.5598345,"Taipei City, Taiwan","Taipei City",北市,Taiwan,TW
+Asia-Pacific,Taiwan,Taipei,"Taiwan Network Access Point",16,1G,,2001,,25.091075,121.5598345,"Taipei City, Taiwan","Taipei City",北市,Taiwan,TW
+Asia-Pacific,Thailand,Bangkok,"CAT National Internet Exchange",20,1.7G,,,,13.7278956,100.5241235,"Bangkok, Thailand",Bangkok,Bangkok,Thailand,TH
+Asia-Pacific,Uzbekistan,Tashkent,"Uzbekistan Internet Exchange",36,,,"24 Dec 2004",,41.2666667,69.2166667,"Tashkent, Uzbekistan",Tashkent,Tashkent,Uzbekistan,UZ
+Asia-Pacific,Vanuatu,"Port Vila","Vanuatu Internet Exchange",5,,,"1 Feb 2013",,-17.7332512,168.3273245,"Port Vila, Vanuatu","Port Vila","Port Vila",Vanuatu,VU
+Asia-Pacific,"Viet Nam","Da Nang city","Vietnam National Internet Exchange",17,,,"Jul 2005",,16.0544068,108.2021667,"Da Nang, Thanh Khê, Da Nang, Vietnam","Da Nang","Da Nang",Vietnam,VN
+Asia-Pacific,"Viet Nam",Hanoi,"Vietnam National Internet Exchange",16,24.5G,,,,21.0333333,105.85,"Hanoi, Hoan Kiem District, Hanoi, Vietnam",Hanoi,Hanoi,Vietnam,VN
+Asia-Pacific,"Viet Nam","Ho Chi Minh City","Viet Nam Internet Exchange",,160M,,,,10.8230989,106.6296638,"Ho Chi Minh City, Vietnam","Ho Chi Minh City","Ho Chi Minh City",Vietnam,VN
+Europe,Armenia,Yerevan,"Armenian Internet Traffic Exchange",8,,,2010,,40.183333,44.516667,"Yerevan, Armenia",Yerevan,Yerevan,Armenia,AM
+Europe,Austria,Graz,"Grazer Internet Exchange",12,36.4M,,,,47.070714,15.439504,"Graz, Austria",Graz,Graz,Austria,AT
+Europe,Austria,Klagenfurt,"Alpes Adria Internet Exchange",12,,,2010,,46.62794,14.30899,"Klagenfurt, Austria",Klagenfurt,Klagenfurt,Austria,AT
+Europe,Austria,Vienna,"Vienna Internet Exchange",118,623G,103907,"Jun 2000",,48.2081743,16.3738189,"Vienna, Austria",Vienna,Vienna,Austria,AT
+Europe,Bahrain,Manama,"Gateway Gulf Internet Exchange Bahrain",3,,,"4 Aug 2009",,26.2166667,50.5833333,"Manama, Bahrain",Manama,Manama,Bahrain,BH
+Europe,Belgium,Brussels,"Belgian National Internet Exchange",51,97G,,2009,,50.85,4.35,"1000 Brussels, Belgium",Brussels,Brussels,1000,1000
+Europe,Bulgaria,Sofia,"Balkan Internet Exchange",25,62.4G,,2010,,42.6977082,23.3218675,"Sofia, Bulgaria",Sofia,Sofia,Bulgaria,BG
+Europe,Bulgaria,Sofia,"Bulgarian Internet eXchange",52,98.4G,108308,"1 Aug 2009",,42.6977082,23.3218675,"Sofia, Bulgaria",Sofia,Sofia,Bulgaria,BG
+Europe,Bulgaria,Sofia,NetIX,53,118G,792660,"1 Jan 2013",,42.6977082,23.3218675,"Sofia, Bulgaria",Sofia,Sofia,Bulgaria,BG
+Europe,Croatia,Zagreb,"Croatian Internet Exchange",28,7.7G,,2005,,45.8150108,15.981919,"Zagreb, Croatia",Zagreb,Zagreb,Croatia,HR
+Europe,Cyprus,Lefkosia,"Cyprus Internet Exchange",3,10M,,1999,,35.1666667,33.3666667,Nicosia,Nicosia,Nicosia,Nicosia,Nicosia
+Europe,"Czech Republic",Brno,"Commercial Brno Internet Exchange",7,,,"12 May 2007",,49.1950602,16.6068371,"Brno, Czech Republic",Brno,Brno,"Czech Republic",CZ
+Europe,"Czech Republic",Prague,"Neutral czFree eXchange",19,28.3G,,,,50.0755381,14.4378005,"Prague, Czech Republic",Prague,Prague,"Czech Republic",CZ
+Europe,"Czech Republic",Prague,"Neutral Internet Exchange",80,291G,,"Feb 2003",,50.0755381,14.4378005,"Prague, Czech Republic",Prague,Prague,"Czech Republic",CZ
+Europe,"Czech Republic",Prague,Peering.cz,37,73G,25,"17 Oct 2012",,50.0755381,14.4378005,"Prague, Czech Republic",Prague,Prague,"Czech Republic",CZ
+Europe,Denmark,Copenhagen,"Danish Internet Exchange",41,31.1G,,"Aug 2003",,55.6760968,12.5683371,"Copenhagen, Denmark",Copenhagen,kbh,Denmark,DK
+Europe,Denmark,Copenhagen,"Netnod COMIX",27,23.4G,,"1 May 2014",,55.6760968,12.5683371,"Copenhagen, Denmark",Copenhagen,kbh,Denmark,DK
+Europe,Estonia,Tallinn,"Tallinn Governmental Internet Exchange",7,,72,,,59.4369608,24.7535746,"Tallinn, Estonia",Tallinn,Tallinn,Estonia,EE
+Europe,Estonia,Tallinn,"Tallinn Internet Exchange (TIX)",13,425M,,2012,,59.4369608,24.7535746,"Tallinn, Estonia",Tallinn,Tallinn,Estonia,EE
+Europe,Estonia,Tallinn,"Tallinn Internet Exchange (TLLIX)",17,1.3G,,,,59.4369608,24.7535746,"Tallinn, Estonia",Tallinn,Tallinn,Estonia,EE
+Europe,Finland,Espoo,"Finnish Communication and Internet Exchange Espoo",23,19.1G,,,,60.2054911,24.6559001,"Espoo, Finland",Espoo,Espoo,Finland,FI
+Europe,Finland,Helsinki,"Finnish Communication and Internet Exchange Helsinki",25,31.5G,,,,60.1733244,24.9410248,"Helsinki, Finland",Helsinki,HKI,Finland,FI
+Europe,Finland,Oulu,"Finnish Communication and Internet Exchange Oulu",23,900M,,,,65.014,25.467,"90100 Oulu, Finland",Oulu,Oulu,90100,90100
+Europe,Finland,Tampere,"Tampere Region Exchange",12,1.5G,766,,,61.5,23.7666667,"33100 Tampere, Finland",Tampere,TRE,33100,33100
+Europe,France,Alsace,EuroGIX,15,,,"4 Mar 2002",,48.3181795,7.4416241,"Alsace, France",Alsace,Alsace,France,FR
+Europe,France,Cayenne,Guyanix,,,,,,4.9227,-52.3269,"Cayenne, French Guiana",Cayenne,Cayenne,"French Guiana",GF
+Europe,France,Grenoble,GrenoblIX,2,,,2013,,45.188529,5.724524,"Grenoble, France",Grenoble,Grenoble,France,FR
+Europe,France,Lyon,"Lyon Internet Exchange",80,8.88G,,"1 Jun 2010",,45.764043,4.835659,"Lyon, France",Lyon,Lyon,France,FR
+Europe,France,Mamoudzou,Mayotix,,,,"23 Mar 2012",,-12.7806,45.2278,"Mamoudzou, Mayotte",Mamoudzou,Mamoudzou,Mayotte,YT
+Europe,France,Marseille,"France-IX Marseille",,1.4G,,2011,,43.296482,5.36978,"Marseille, France",Marseille,Marseille,France,FR
+Europe,France,Marseille,"Marseille Internet Exchange",,,,2005,,43.296482,5.36978,"Marseille, France",Marseille,Marseille,France,FR
+Europe,France,Paris,"Equinix Paris",232,,79521,2008,,48.856614,2.3522219,"Paris, France",Paris,Paris,France,FR
+Europe,France,Paris,"FR-IX 75",13,,,"5 May 2010",,48.856614,2.3522219,"Paris, France",Paris,Paris,France,FR
+Europe,France,Paris,France-IX,222,284G,90256,,,48.856614,2.3522219,"Paris, France",Paris,Paris,France,FR
+Europe,France,Paris,"French National Internet Exchange IPv6",20,,,"1 Nov 2002",,48.856614,2.3522219,"Paris, France",Paris,Paris,France,FR
+Europe,France,Paris,"Gigabit European Internet eXchange",8,,,,,48.856614,2.3522219,"Paris, France",Paris,Paris,France,FR
+Europe,France,Paris,"Mix Internet Exchange and Transit",7,,,,,48.856614,2.3522219,"Paris, France",Paris,Paris,France,FR
+Europe,France,Paris,PARIX,46,14G,,,,48.856614,2.3522219,"Paris, France",Paris,Paris,France,FR
+Europe,France,Paris,"Service for French Internet Exchange",95,23.2G,12862,2010,,48.856614,2.3522219,"Paris, France",Paris,Paris,France,FR
+Europe,France,"Saint Denis",Reunix,10,,,,,48.936181,2.357443,"Saint-Denis, France",Saint-Denis,Saint-Denis,France,FR
+Europe,France,"Saint Etienne","The Saint-Etienne Internet eXchange Point",2,,,,,45.439695,4.3871779,"Saint-Étienne, France",Saint-Étienne,Saint-Étienne,France,FR
+Europe,France,Toulouse,"Le GIX de la grande region Toulousaine",11,,,"16 Apr 2009",,43.604652,1.444209,"Toulouse, France",Toulouse,Toulouse,France,FR
+Europe,Germany,Berlin,"Berlin Commercial Internet Exchange",57,47G,101264,,,52.5200066,13.404954,"Berlin, Germany",Berlin,Berlin,Germany,DE
+Europe,Germany,Berlin,"European Commercial Internet Exchange Berlin",47,286G,,2003,,52.5200066,13.404954,"Berlin, Germany",Berlin,Berlin,Germany,DE
+Europe,Germany,Düsseldorf,"European Commercial Internet Exchange Düsseldorf",97,71.6G,,,,51.2277411,6.7734556,"Dusseldorf, Germany",Dusseldorf,Dusseldorf,Germany,DE
+Europe,Germany,Düsseldorf,"OpenCarrier e.G. Member IX Duesseldorf",10,,,"May 2007",,51.2277411,6.7734556,"Dusseldorf, Germany",Dusseldorf,Dusseldorf,Germany,DE
+Europe,Germany,Frankfurt,"Deutscher Commercial Internet Exchange",508,2.7T,591929,,,50.1109221,8.6821267,"Frankfurt, Germany",Frankfurt,Frankfurt,Germany,DE
+Europe,Germany,Frankfurt,"European Commercial Internet Exchange",8,,,,,50.1109221,8.6821267,"Frankfurt, Germany",Frankfurt,Frankfurt,Germany,DE
+Europe,Germany,Frankfurt,"KleyReX Internet Exchange",138,3.34G,,,,50.1109221,8.6821267,"Frankfurt, Germany",Frankfurt,Frankfurt,Germany,DE
+Europe,Germany,Frankfurt,"OpenCarrier e.G. Member IX Frankfort",8,,,"May 2007",,50.1109221,8.6821267,"Frankfurt, Germany",Frankfurt,Frankfurt,Germany,DE
+Europe,Germany,Hamburg,"European Commercial Internet Exchange Hamburg",38,,,"21 Jan 2009",,53.5510846,9.9936818,"Hamburg, Germany",Hamburg,Hamburg,Germany,DE
+Europe,Germany,Hamburg,"Internet Exchange Hamburg",30,19.5G,,,,53.5510846,9.9936818,"Hamburg, Germany",Hamburg,Hamburg,Germany,DE
+Europe,Germany,Hamburg,"Work-IX Hamburg",32,43.6G,,2008,,53.5510846,9.9936818,"Hamburg, Germany",Hamburg,Hamburg,Germany,DE
+Europe,Germany,Hamburg,"XchangePoint Hamburg IPP",2,,,"Apr 2003",,53.5510846,9.9936818,"Hamburg, Germany",Hamburg,Hamburg,Germany,DE
+Europe,Germany,Munich,ALP-IX,24,16.1G,,"Apr 2010",,48.1351253,11.5819806,"Munich, Germany",Munich,M,Germany,DE
+Europe,Germany,Munich,"Internet Exchange Service",40,19G,43625,"Sep 2000",,48.1351253,11.5819806,"Munich, Germany",Munich,M,Germany,DE
+Europe,Germany,Nuremberg,"Nürnberger Internet Exchange",19,4.8G,,,,49.45203,11.07675,"Nuremberg, Germany",Nuremberg,N,Germany,DE
+Europe,Germany,Stuttgart,"Stuttgarter Internet Exchange",16,,,"Apr 2005",,48.7754181,9.1817588,"Stuttgart, Germany",Stuttgart,Stuttgart,Germany,DE
+Europe,Greece,Athens,"Greek Internet Exchange",13,15.3G,,,,37.983917,23.7293599,"Athens, Greece",Athens,Athens,Greece,GR
+Europe,Hungary,Budapest,"Budapest Internet Exchange",50,165G,,,,47.497912,19.040235,"Budapest, Hungary",Budapest,Bp,Hungary,HU
+Europe,Iceland,Reykjavik,"Reykjavik Internet Exchange",21,4.27G,,1999,,64.1333333,-21.9333333,"Reykjavik, Iceland",Reykjavik,Reykjavik,Iceland,IS
+Europe,Ireland,Cork,"Cork Neutral Internet Exchange",14,,,"17 Jul 2009",,51.8968917,-8.4863157,"Cork, Ireland",Cork,Cork,Ireland,IE
+Europe,Ireland,Dublin,"Internet Neutral Exchange Association Limited",81,39.6G,2645,2005,,53.3498053,-6.2603097,"Dublin, Ireland",Dublin,Dublin,Ireland,IE
+Europe,Ireland,Galway,"eXchange West",3,,,"4 Jun 2009",,53.2705588,-9.0566677,"Galway, Ireland",Galway,Galway,Ireland,IE
+Europe,Israel,"Tel Aviv","Israeli Internet Exchange",19,17.3G,,1996,,32.0852999,34.7817676,"Tel Aviv, Israel","Tel Aviv","ת""א",Israel,IL
+Europe,Italy,Florence,"Tuscany Internet Exchange",31,568M,,2003,,43.7710332,11.2480006,"Florence, Italy",Florence,Florence,Italy,IT
+Europe,Italy,Milan,"Milan Internet Exchange",109,167G,,,,45.4654219,9.1859243,"Milan, Italy",Milan,Milan,Italy,IT
+Europe,Italy,Milan,"Milan Neutral Access Point",19,,,2008,,45.4654219,9.1859243,"Milan, Italy",Milan,Milan,Italy,IT
+Europe,Italy,Padova,"VSIX NAP del Nord Est",23,1.1G,,"1 Sep 2009",,45.4064349,11.8767611,"Padua, Italy",Padua,Padua,Italy,IT
+Europe,Italy,Rome,"NaMeX - Nautilus Mediterranean Exchange Point",53,16.1G,,"3 Apr 2003",,41.8723889,12.4801802,"Rome, Italy",Rome,Rome,Italy,IT
+Europe,Italy,Torino,"Torino Piemonte Exchange Point",74,29.9G,2474,,,45.070312,7.6868565,"Turin, Italy",Turin,Turin,Italy,IT
+Europe,Italy,Udine,"Friuli Venezia Giulia Internet Exchange",7,,,2009,,46.0710668,13.2345794,"Udine, Italy",Udine,Udine,Italy,IT
+Europe,Kosovo,Prishtinë,"KOSIX Internet Exchange Point",4,,,"23 Jun 2011",,42.6577982,21.1533456,Prishtina,Prishtina,Prishtina,Prishtina,Prishtina
+Europe,Latvia,Riga,"Santa Monica Internet Local Exchange",7,,,,,56.9496487,24.1051864,"Rīga, Latvia",Rīga,Rīga,Latvia,LV
+Europe,Lebanon,Beirut,"Beirut Internet Exchange",9,58.1M,,"6 Dec 2007",,33.8886289,35.4954794,"Beirut, Lebanon",Beirut,Beirut,Lebanon,LB
+Europe,Lithuania,Vilnius,"Lithuania Internet Exchange",5,3.2G,,,,54.6871555,25.2796514,"Vilnius, Lithuania",Vilnius,Vilnius,Lithuania,LT
+Europe,Lithuania,Vilnius,"Lithuanian Internet service providers exchange unit",24,,,2008,,54.6871555,25.2796514,"Vilnius, Lithuania",Vilnius,Vilnius,Lithuania,LT
+Europe,Luxembourg,Luxembourg,"Luxembourg Commercial Internet Exchange",44,18G,,2010,,49.815273,6.129583,Luxembourg,Luxembourg,LU,Luxembourg,LU
+Europe,Luxembourg,Luxembourg,"Luxembourg Internet Exchange",12,129M,,,,49.815273,6.129583,Luxembourg,Luxembourg,LU,Luxembourg,LU
+Europe,Malta,Msida,"Malta Internet Exchange",12,,,"7 Sep 1999",,35.8977778,14.4894444,"Msida, Malta",Msida,Msida,Malta,MT
+Europe,Netherlands,Amsterdam,"Amsterdam Internet Exchange",617,3T,651941,2009,,52.3702157,4.8951679,"Amsterdam, The Netherlands",Amsterdam,Amsterdam,"The Netherlands",NL
+Europe,Netherlands,Amsterdam,"Netherlands Internet Exchange",399,1.3T,62122,,,52.3702157,4.8951679,"Amsterdam, The Netherlands",Amsterdam,Amsterdam,"The Netherlands",NL
+Europe,Netherlands,Enschede,"Nederlands-Duitse Internet Exchange",21,50M,,"Apr 2001",,52.2215372,6.8936619,"Enschede, The Netherlands",Enschede,Enschede,"The Netherlands",NL
+Europe,Netherlands,Groningen,Groningen-IX,51,,,,,53.2193835,6.5665018,"Groningen, The Netherlands",Groningen,Groningen,"The Netherlands",NL
+Europe,Netherlands,Leeuwarden,"Friese Internet Exchange",38,1.3G,,"26 Jan 2006",,53.2012334,5.7999133,"Leeuwarden, The Netherlands",Leeuwarden,Leeuwarden,"The Netherlands",NL
+Europe,Netherlands,Rotterdam,"Rotterdam Internet eXchange",63,,,,,51.9216667,4.4811111,"Rotterdam, The Netherlands",Rotterdam,Rotterdam,"The Netherlands",NL
+Europe,Norway,Bergen,"Bergen Internet Exchange",5,258M,,,,60.3912628,5.3220544,"Bergen, Norway",Bergen,Bergen,Norway,NO
+Europe,Norway,Oslo,"Free Internet eXchange Oslo",48,,,"16 Jan 2008",,59.9138688,10.7522454,"Oslo, Norway",Oslo,Oslo,Norway,NO
+Europe,Norway,Oslo,"Norwegian Internet Exchange Oslo 1",64,42.6G,,,,59.9138688,10.7522454,"Oslo, Norway",Oslo,Oslo,Norway,NO
+Europe,Norway,Oslo,"Norwegian Internet Exchange Oslo 2",21,10.6G,,,,59.9138688,10.7522454,"Oslo, Norway",Oslo,Oslo,Norway,NO
+Europe,Norway,Trondheim,"Trondheim Internet Exchange",5,383M,,,,63.4305149,10.3950528,"Trondheim, Norway",Trondheim,Trondheim,Norway,NO
+Europe,Palestine,Ramallah,"Palestinian Internet Exchange",9,27.3M,,"4 Jun 2012",,31.8980428,35.2042714,Ramallah,Ramallah,Ramallah,Ramallah,Ramallah
+Europe,Poland,Katowice,"Tysiaclecie Internet Exchange",7,,,"Apr 2004",,50.2648919,19.0237815,"Katowice, Poland",Katowice,Katowice,Poland,PL
+Europe,Poland,Kraków,"Krakowski Traffic Exchange Point",28,,,"Nov 2009",,50.0646501,19.9449799,"Krakow, Poland",Krakow,Krakow,Poland,PL
+Europe,Poland,Poznan,"Poznan Internet Exchange",82,15.4G,,"10 Mar 2006",,52.406374,16.9251681,"Poznan, Poland",Poznan,Poznan,Poland,PL
+Europe,Poland,Warsaw,"Krajowa Izba Komunikacji Ethernetowej",11,,,,,52.2296756,21.0122287,"Warsaw, Poland",Warsaw,Warsaw,Poland,PL
+Europe,Poland,Warsaw,"Polish Internet Exchange",213,309G,126542,"2 Apr 2006",,52.2296756,21.0122287,"Warsaw, Poland",Warsaw,Warsaw,Poland,PL
+Europe,Poland,Warsaw,"Thinx Poland",146,118G,,,,52.2296756,21.0122287,"Warsaw, Poland",Warsaw,Warsaw,Poland,PL
+Europe,Poland,Warsaw,"TPIX - Internet Exchange",120,10T,,"Nov 2010",,52.2296756,21.0122287,"Warsaw, Poland",Warsaw,Warsaw,Poland,PL
+Europe,Poland,Warsaw,"Warsaw Internet Exchange",42,1.82G,,1996,,52.2296756,21.0122287,"Warsaw, Poland",Warsaw,Warsaw,Poland,PL
+Europe,Poland,Wroclaw,"Wroclaw Internet eXchange",8,,,,,51.1078852,17.0385376,"Wroclaw, Poland",Wroclaw,Wroclaw,Poland,PL
+Europe,Portugal,Lisbon,"Gigabit Portugese Internet Exchange",22,23.5G,,"May 2002",,38.7222524,-9.1393366,"Lisbon, Portugal",Lisbon,Lisbon,Portugal,PT
+Europe,Romania,Bucharest,Balcan-IX,24,25G,,,,44.4325,26.1038889,"Bucharest, Romania",Bucharest,Bucharest,Romania,RO
+Europe,Romania,Bucharest,InterLAN-IX,48,26.4G,,2007,,44.4325,26.1038889,"Bucharest, Romania",Bucharest,Bucharest,Romania,RO
+Europe,Romania,Bucharest,"Romanian National Internet Exchange",32,12.4G,,"7 Sep 2001",,44.4325,26.1038889,"Bucharest, Romania",Bucharest,Bucharest,Romania,RO
+Europe,Russia,Ekaterinburg,"Ekaterinburg Internet Exchange",40,28.1M,,,,56.8333333,60.6,"Yekaterinburg, Sverdlovsk Oblast, Russia",Yekaterinburg,Yekaterinburg,Russia,RU
+Europe,Russia,Kazan,"Kazan Internet Exchange",11,552M,,"May 2010",,55.8005556,49.1055556,"Kazan, Republic of Tatarstan, Russia",Kazan,Kazan,Russia,RU
+Europe,Russia,Krasnoyarsk,"Krasnoyarsk Internet Exchange",50,24G,,2006,,56.0127463,92.9223611,"Krasnoyarsk, Krasnoyarsk Krai, Russia",Krasnoyarsk,Krasnoyarsk,Russia,RU
+Europe,Russia,Moscow,DataIX,39,715G,,"20 Oct 2010",,55.755826,37.6173,"Moscow, Russia",Moscow,Moscow,Russia,RU
+Europe,Russia,Moscow,"Moscow Internet Exchange",367,1.2T,,1995,,55.755826,37.6173,"Moscow, Russia",Moscow,Moscow,Russia,RU
+Europe,Russia,Novosibirsk,"Novosibirsk Internet Exchange",50,20.3G,,2010,,55.0083526,82.9357327,"Novosibirsk, Novosibirsk Oblast, Russia",Novosibirsk,Novosibirsk,Russia,RU
+Europe,Russia,Rostov-on-Don,"Rostov-on-Don Internet Exchange",17,3.6G,,2009,,47.2166667,39.7,"Rostov-on-Don, Rostov Oblast, Russia",Rostov-on-Don,Rostov-on-Don,Russia,RU
+Europe,Russia,Samara,"Samara Internet Exchange",17,12G,,,,53.2333333,50.1666667,"Samara, Samara Oblast, Russia",Samara,Samara,Russia,RU
+Europe,Russia,Saratov,"Saratov Internet Exchange",12,163M,,2005,,51.55,46,"Saratov, Saratov Oblast, Russia",Saratov,Saratov,Russia,RU
+Europe,Russia,"St. Petersburg",DataIX,40,355G,,"20 Oct 2010",,27.7730556,-82.64,"St. Petersburg, FL, USA","St. Petersburg","St Petersburg","United States",US
+Europe,Russia,"St. Petersburg",MPIX,5,,,,,27.7730556,-82.64,"St. Petersburg, FL, USA","St. Petersburg","St Petersburg","United States",US
+Europe,Russia,"St. Petersburg","St. Petersburg Internet Exchange",87,66.7G,,2009,,27.7730556,-82.64,"St. Petersburg, FL, USA","St. Petersburg","St Petersburg","United States",US
+Europe,Russia,Stavropol,"Stavropol Internet Exchange",15,1.18G,,2009,,45.05,41.9666667,"Stavropol, Stavropol Krai, Russia",Stavropol,Stavropol,Russia,RU
+Europe,Russia,Ulyanovsk,"Ulyanovsk Internet Exchange",16,2.8G,,"8 May 2009",,54.3166667,48.3833333,"Ulyanovsk, Ulyanovsk Oblast, Russia",Ulyanovsk,Ulyanovsk,Russia,RU
+Europe,Russia,Vladivostok,"Vladivostok Internet Exchange",15,492M,,2008,,43.1666667,131.9333333,"Vladivostok, Primorsky Krai, Russia",Vladivostok,Vladivostok,Russia,RU
+Europe,"Saudi Arabia",Riyadh,"Internet Exchange of Saudi Arabia",4,,,"Jan 2009",,24.7116667,46.7241667,"Riyadh Saudi Arabia",Riyadh,Riyadh,"Saudi Arabia",SA
+Europe,Serbia,Belgrade,"Serbian Open Exchange",15,,,"Sep 2010",,44.8205556,20.4622222,"Belgrade, Serbia",Belgrade,Belgrade,Serbia,RS
+Europe,Slovakia,Bratislava,SitelIX,22,6.53G,,,,48.1458923,17.1071373,"Bratislava, Slovakia",Bratislava,Bratislava,Slovakia,SK
+Europe,Slovakia,Bratislava,"Slovak Internet Exchange",51,52.6G,,,,48.1458923,17.1071373,"Bratislava, Slovakia",Bratislava,Bratislava,Slovakia,SK
+Europe,Slovakia,Košice,"Slovak Internet Exchange",52,215M,,"Jun 2008",,48.7210053,21.2577999,"Kosice, Slovakia",Kosice,Kosice,Slovakia,SK
+Europe,Slovenia,Ljubljana,"Slovenian Internet Exchange",21,36.5G,,1994,,46.0569465,14.5057515,"Ljubljana, Slovenia",Ljubljana,Ljubljana,Slovenia,SI
+Europe,Spain,Barcelona,"Catalunya Neutral Internet Exchange Point",26,3.5G,,,,41.3850639,2.1734035,"Barcelona, Spain",Barcelona,Barcelona,Spain,ES
+Europe,Spain,Bilbao,"Punto Neutro Vasco de Internet",7,32.5M,,"17 Jan 2002",,43.2630126,-2.9349852,"Bilbao, Biscay, Spain",Bilbao,Bilbao,Spain,ES
+Europe,Spain,Madrid,"Punto Neutro Español de Internet",65,204G,,1997,,40.4167754,-3.7037902,"Madrid, Spain",Madrid,Madrid,Spain,ES
+Europe,Spain,Madrid,"Terremark NAP de las Americas - Madrid",2,,,"Oct 2004",,40.4167754,-3.7037902,"Madrid, Spain",Madrid,Madrid,Spain,ES
+Europe,Sweden,Gothenburg,"Gothenburg Internet Exchange",15,,,,,57.70887,11.97456,"Gothenburg, Sweden",Gothenburg,Gothenburg,Sweden,SE
+Europe,Sweden,Gothenburg,"Netnod Gothenburg",15,10.3G,,,,57.70887,11.97456,"Gothenburg, Sweden",Gothenburg,Gothenburg,Sweden,SE
+Europe,Sweden,Luleå,"Netnod Luleå",6,401M,,"Sep 2004",,65.584819,22.1567026,"Luleå, Sweden",Luleå,Luleå,Sweden,SE
+Europe,Sweden,Malmö,"Malmö Internet eXchange",11,,,,,55.604981,13.003822,"Malmö, Sweden",Malmö,Malmö,Sweden,SE
+Europe,Sweden,Malmö,"Netnod Malmö",19,19.7G,,,,55.604981,13.003822,"Malmö, Sweden",Malmö,Malmö,Sweden,SE
+Europe,Sweden,Stockholm,"Netnod Stockholm",48,337G,,"May 2003",,59.3293235,18.0685808,"Stockholm, Sweden",Stockholm,Stockholm,Sweden,SE
+Europe,Sweden,Stockholm,SOLIX,58,12.6G,,,,59.3293235,18.0685808,"Stockholm, Sweden",Stockholm,Stockholm,Sweden,SE
+Europe,Sweden,Stockholm,"Stockholm Internet Exchange",71,18.8G,,2007,,59.3293235,18.0685808,"Stockholm, Sweden",Stockholm,Stockholm,Sweden,SE
+Europe,Sweden,Sundsvall,"Netnod Sundsvall",14,7.1G,,2000,,62.390811,17.306927,"Sundsvall, Sweden",Sundsvall,Sundsvall,Sweden,SE
+Europe,Sweden,Umeå,NorrNod,12,150M,,1996,,63.8258471,20.2630354,"Umeå, Sweden",Umeå,Umeå,Sweden,SE
+Europe,Switzerland,Geneva,"CERN Internet Exchange Point",41,2.3G,,,,46.1983922,6.1422961,"Geneva, Switzerland",Geneva,Geneva,Switzerland,CH
+Europe,Switzerland,Zurich,"Equinix Zurich",65,2.33G,,,,47.3686498,8.5391825,"Zurich, Switzerland",Zurich,Zurich,Switzerland,CH
+Europe,Switzerland,Zurich,SwissIX,147,49.6G,16575,,,47.3686498,8.5391825,"Zurich, Switzerland",Zurich,Zurich,Switzerland,CH
+Europe,Turkey,Istanbul,"Terremark IST-IX",8,,272,2010,,41.00527,28.97696,"Istanbul, Turkey",Istanbul,Istanbul,Turkey,TR
+Europe,Ukraine,Donetsk,"East Ukrainian Internet Exchange",11,1.5G,,,,48.015883,37.80285,"Donetsk, Donetsk Oblast, Ukraine",Donetsk,Donetsk,Ukraine,UA
+Europe,Ukraine,Kiev,"Digital Telecom Internet Exchange",86,296G,,2009,,50.4501,30.5234,"Kiev, Kyiv city, Ukraine",Kiev,Kiev,Ukraine,UA
+Europe,Ukraine,Kiev,"Giganet Internet Exchange",5,308G,,,,50.4501,30.5234,"Kiev, Kyiv city, Ukraine",Kiev,Kiev,Ukraine,UA
+Europe,Ukraine,Kiev,"Ukrainian Internet Exchange",125,225G,,"Jul 2000",,50.4501,30.5234,"Kiev, Kyiv city, Ukraine",Kiev,Kiev,Ukraine,UA
+Europe,Ukraine,Kiev,"Ukrtelecom Internet Exchange",,,,,,50.4501,30.5234,"Kiev, Kyiv city, Ukraine",Kiev,Kiev,Ukraine,UA
+Europe,Ukraine,Odessa,"Odessa Internet Exchange",25,4.3G,,"Sep 2007",,46.482526,30.7233095,"Odessa, Odessa Oblast, Ukraine",Odessa,Odessa,Ukraine,UA
+Europe,Ukraine,Simferopol,"Crimea Internet Exchange",21,8.3G,,,,44.952117,34.102417,Simferopol,Simferopol,Simferopol,Crimea,Crimea
+Europe,"United Arab Emirates",Dubai,UAE-IX,28,10.3G,1213,"24 Feb 2012",,25.0476643,55.1817407,"Dubai - United Arab Emirates",Dubai,Dubai,"United Arab Emirates",AE
+Europe,"United Kingdom",Edinburgh,"IXScotland powered by LINX",4,79.2M,,"Oct 2013",,55.953252,-3.188267,"Edinburgh, City of Edinburgh, UK",Edinburgh,Edinburgh,"United Kingdom",GB
+Europe,"United Kingdom",Leeds,"Leeds Internet Exchange",16,2.1G,,,,53.8007554,-1.5490774,"Leeds, West Yorkshire, UK",Leeds,Leeds,"United Kingdom",GB
+Europe,"United Kingdom",London,"London Internet Exchange",496,1.92T,35067,"Sep 1999",,51.508515,-0.1254872,"London, UK",London,London,"United Kingdom",GB
+Europe,"United Kingdom",London,"London Network Access Point",122,68.9G,9819,"Mar 2003",,51.508515,-0.1254872,"London, UK",London,London,"United Kingdom",GB
+Europe,"United Kingdom",London,"XchangePoint London IPP",166,5.3G,,"Feb 2002",,51.508515,-0.1254872,"London, UK",London,London,"United Kingdom",GB
+Europe,"United Kingdom",Macclesfield,Edge-IX,36,,,2013,,53.258663,-2.119287,"Macclesfield, Cheshire East, UK",Macclesfield,Macclesfield,Macclesfield,Macclesfield
+Europe,"United Kingdom",Manchester,"IXManchester powered by LINX",38,6.2G,,,,53.479324,-2.2484851,"Manchester, UK",Manchester,Manchester,"United Kingdom",GB
+"Latin America",Argentina,"Bahía Blanca","NAP CABASE Bahía Blanca",12,180M,,2013,,-38.7116776,-62.2680778,"Bahía Blanca, Buenos Aires Province, Argentina","Bahía Blanca","Bahía Blanca",Argentina,AR
+"Latin America",Argentina,"Buenos Aires","NAP CABASE Buenos Aires",79,6.32G,7181,"Aug 2006",,-34.6037232,-58.3815931,"Buenos Aires, Argentina","Buenos Aires",CF,Argentina,AR
+"Latin America",Argentina,Córdoba,"NAP CABASE Córdoba",9,100M,,"Aug 2012",,37.8881751,-4.7793835,"Córdoba, Spain",Córdoba,Córdoba,Spain,ES
+"Latin America",Argentina,"La Plata","NAP CABASE La Plata",10,120M,,"6 Jun 2012",,-34.92125,-57.9543333,"La Plata, Buenos Aires Province, Argentina","La Plata","La Plata",Argentina,AR
+"Latin America",Argentina,"Mar del Plata","NAP CABASE Mar del Plata",6,270M,,"7 Nov 2012",,-37.9798584,-57.5897942,"Mar del Plata, Buenos Aires Province, Argentina","Mar del Plata","Mar del Plata",Argentina,AR
+"Latin America",Argentina,"Mar del Tuyú","NAP CABASE De la Costa",5,90M,,"29 Nov 2011",,-36.5798361,-56.6926753,"Mar del Tuyú, Buenos Aires Province, Argentina","Mar del Tuyú","Mar del Tuyú",Argentina,AR
+"Latin America",Argentina,Mendoza,"NAP CABASE Mendoza",9,130M,,"20 Oct 2011",,-32.890183,-68.8440498,"Mendoza, Mendoza Province, Argentina",Mendoza,Mendoza,Argentina,AR
+"Latin America",Argentina,Neuquén,"NAP CABASE Neuquén",16,750M,7095,"10 May 2011",,-38.9524444,-68.0641389,"Neuquén, Neuquén Province, Argentina",Neuquen,Neuquen,Argentina,AR
+"Latin America",Argentina,Rosario,"NAP CABASE Rosario",17,180M,,"31 Mar 2011",,-32.9507408,-60.6665001,"Rosario, Santa Fe Province, Argentina",Rosario,Rosario,Argentina,AR
+"Latin America",Argentina,"Santa Fe","NAP CABASE Santa Fe",8,55M,,"22 Nov 2011",,35.6869752,-105.937799,"Santa Fe, NM, USA","Santa Fe","Santa Fe","United States",US
+"Latin America",Bolivia,"La Paz",IX-LAPAZ,3,1M,250,"1 Nov 2013",,-16.5,-68.15,"Nuestra Señora de La Paz, Bolivia","Nuestra Señora de La Paz","Nuestra Señora de La Paz",Bolivia,BO
+"Latin America",Bolivia,"La Paz","Punto de Intercambio de Trafico de Bolivia",6,175M,,"13 Nov 2013",,-16.5,-68.15,"Nuestra Señora de La Paz, Bolivia","Nuestra Señora de La Paz","Nuestra Señora de La Paz",Bolivia,BO
+"Latin America",Brazil,Americana,"Ponto de Troca de Trafego do Americana",12,454M,,"20 Dec 2010",,-22.7378463,-47.3335688,"Americana - São Paulo, Brazil",Americana,Americana,Brazil,BR
+"Latin America",Brazil,Belém,"Ponto de Troca de Trafego do Belém",11,1.6G,,,,-1.4557549,-48.4901799,"Belém - Pará, Brazil",Belém,Belém,Brazil,BR
+"Latin America",Brazil,"Belo Horizonte","Ponto de Troca de Tráfego do Belo Horizonte",21,3.7G,,,,-19.9245192,-43.9352685,"Belo Horizonte - Minas Gerais, Brazil","Belo Horizonte","Belo Horizonte",Brazil,BR
+"Latin America",Brazil,Brasília,"Ponto de Troca de Tráfego do Brasília",15,3.1G,,,,-15.7941454,-47.8825479,"Brasilia - Federal District, Brazil",Brasilia,Brasilia,Brazil,BR
+"Latin America",Brazil,"Campina Grande","Ponto de Troca de Trafego do Campina Grande",13,611M,,"28 Sep 2010",,-7.2223667,-35.8734667,"Campina Grande - Paraíba, Brazil","Campina Grande","Campina Grande",Brazil,BR
+"Latin America",Brazil,Campinas,"Ponto de Troca de Trafego do Campinas",24,3.1G,,"30 Nov 2009",,-22.9099384,-47.0626332,"Campinas - São Paulo, Brazil",Campinas,Campinas,Brazil,BR
+"Latin America",Brazil,"Caxias do Sul","Ponto de Troca de Trafego do Caxias do Sul",5,87.8M,,,,-29.1634031,-51.1796683,"Caxias do Sul - Rio Grande do Sul, Brazil","Caxias do Sul","Caxias do Sul",Brazil,BR
+"Latin America",Brazil,Cuiabá,"Ponto de Troca de Tráfego do Cuiabá",6,8K,,,,-15.6014109,-56.0978917,"Cuiabá - Mato Grosso, Brazil",Cuiabá,Cuiabá,Brazil,BR
+"Latin America",Brazil,Curitiba,"Ponto de Troca de Tráfego do Paraná",33,17.7G,,"Jun 2002",,-25.4200388,-49.2650973,"Curitiba - Parana, Brazil",Curitiba,Curitiba,Brazil,BR
+"Latin America",Brazil,Florianópolis,"Ponto de Troca de Tráfego do Florianópolis",19,1G,,,,-27.5949884,-48.5481743,"Florianopolis - Santa Catarina, Brazil",Florianopolis,Florianopolis,Brazil,BR
+"Latin America",Brazil,Fortaleza,"Ponto de Troca de Trafego do Fortaleza",21,1.9G,,"1 Oct 2008",,-3.7318616,-38.5266704,"Fortaleza - Ceará, Brazil",Fortaleza,Fortaleza,Brazil,BR
+"Latin America",Brazil,Goiânia,"Ponto de Troca de Trafego do Goiânia",15,990M,,"20 Oct 2010",,-16.6868912,-49.2647943,"Goiânia - Goiás, Brazil",Goiânia,Goiânia,Brazil,BR
+"Latin America",Brazil,Lajeado,"Ponto de Troca de Trafego do Lajeado",7,15.6M,,,,-29.459582,-51.9649421,"Lajeado - Rio Grande do Sul, Brazil",Lajeado,Lajeado,Brazil,BR
+"Latin America",Brazil,Londrina,"Ponto de Troca de Trafego do Londrina",20,1.7G,,"15 Feb 2009",,-23.3044524,-51.1695824,"Londrina - Parana, Brazil",Londrina,Londrina,Brazil,BR
+"Latin America",Brazil,Manaus,"Ponto de Troca de Trafego do Manaus",3,24.3M,,,,-3.1190275,-60.0217314,"Manaus - Amazonas, Brazil",Manaus,Manaus,Brazil,BR
+"Latin America",Brazil,Natal,"Ponto de Troca de Trafego do Natal",12,847M,,,,-5.7792569,-35.200916,"Natal - Rio Grande do Norte, Brazil",Natal,Natal,Brazil,BR
+"Latin America",Brazil,"Porto Alegre","Ponto de Troca de Trafego do Porto Alegre",39,6.76G,,"Apr 2002",,-30.0346471,-51.2176584,"Porto Alegre - Rio Grande do Sul, Brazil","Porto Alegre","Porto Alegre",Brazil,BR
+"Latin America",Brazil,Recife,"Ponto de Troca de Trafego do Recife",12,72.9M,,"1 Dec 2009",,-8.0475458,-34.8769621,"Recife - Pernambuco, Brazil",Recife,Recife,Brazil,BR
+"Latin America",Brazil,"Rio de Janeiro","Ponto de Troca de Tráfego do Rio de Janeiro",23,33.1G,,,,-22.9082998,-43.1970773,"Rio - Rio de Janeiro, Brazil",Rio,Rio,Brazil,BR
+"Latin America",Brazil,Salvador,"Ponto de Troca de Trafego do Salvador",32,3G,,2008,,-12.9722286,-38.5014201,"Salvador - Bahia, Brazil",Salvador,Salvador,Brazil,BR
+"Latin America",Brazil,"São Carlos","Ponto de Troca de Trafego do Central Paulista",2,1.5M,,,,-22.0087175,-47.8909142,"São Carlos - São Paulo, Brazil","São Carlos","São Carlos",13560,13560
+"Latin America",Brazil,"São José do Rio Preto","Ponto de Troca de Trafego do São José do Rio Preto",7,211M,,,,-20.811761,-49.3762272,"Sao Jose do Rio Preto - São Paulo, Brazil","Sao Jose do Rio Preto","Sao Jose do Rio Preto",Brazil,BR
+"Latin America",Brazil,"São José dos Campos","Ponto de Troca de Trafego do São José dos Campos",13,576M,,2011,,-23.223701,-45.9009074,"São José dos Campos - São Paulo, Brazil","São José dos Campos","São José dos Campos",Brazil,BR
+"Latin America",Brazil,"São Paulo","NAP do Brasil",37,9.6G,,1998,,-23.5505199,-46.6333094,"São Paulo, Brazil","São Paulo","São Paulo",Brazil,BR
+"Latin America",Brazil,"São Paulo","Ponto de Troca de Tráfego Metro São Paulo",456,454G,,"4 Jan 2006",,-23.5505199,-46.6333094,"São Paulo, Brazil","São Paulo","São Paulo",Brazil,BR
+"Latin America",Brazil,Vitória,"Ponto de Troca de Trafego do Vitória",17,626M,,2012,,-20.2976178,-40.2957768,"Vitoria - Espirito Santo, Brazil",Vitoria,Vitoria,Brazil,BR
+"Latin America",Chile,Santiago,"NAP Chile",13,,,,,-33.4691199,-70.641997,"Santiago, Santiago Metropolitan Region, Chile",Santiago,Stgo,Chile,CL
+"Latin America",Colombia,Bogotá,NAP-Colombia,17,22G,,"29 Jun 2000",,4.5980556,-74.0758333,"Bogotá, Bogota, Colombia",Bogota,Bogota,Colombia,CO
+"Latin America","Costa Rica","San Jose","Punto de Intercambio Neutro de Internet",3,,,"29 Apr 2014",,37.3393857,-121.8949555,"San Jose, CA, USA","San Jose","San Jose","United States",US
+"Latin America",Cuba,Habana,"NAP de Cuba",5,50M,,"Jun 2001",,23.0540698,-82.345189,"Havana, Cuba",Havana,Havana,Cuba,CU
+"Latin America",Dominica,Roseau,"Dominica National Internet Exchange Point",6,160M,,"27 Feb 2013",,15.3091676,-61.3793554,"Roseau, Dominica",Roseau,Roseau,Dominica,DM
+"Latin America","Dominican Republic","Santo Domingo","NAP del Caribe",,,,"Jul 2008",,18.5,-69.9833333,"Santo Domingo, Dominican Republic","Santo Domingo","Santo Domingo","Dominican Republic",DO
+"Latin America",Ecuador,Guayaquil,"NAP AEPROVI Guayaquil",34,492M,,,,-2.1709979,-79.9223592,"Guayaquil, Ecuador",Guayaquil,Guayaquil,Ecuador,EC
+"Latin America",Ecuador,Quito,"NAP AEPROVI Quito",28,9.76G,,,,-0.1806532,-78.4678382,"Quito, Ecuador",Quito,Quito,Ecuador,EC
+"Latin America",Grenada,"St. Georges","Grenada Internet Exchange",2,35M,61,"12 May 2011",,51.521034,-0.122362,"St George's Holborn, Queen Square, London WC1N 3AH, UK","St George's Holborn","St George's Holborn",London,London
+"Latin America",Haiti,"Port au Prince","AHTIC Internet Exchange Point",4,97K,,"5 May 2009",,18.5333333,-72.3333333,"Port-au-Prince, Haiti",Port-au-Prince,PAP,Haiti,HT
+"Latin America","Netherlands Antilles",Curaçao,"Caribbean Internet Exchange",12,4.5G,,"20 Apr 2009",,12.16957,-68.99002,Curaçao,Curaçao,CW,Curaçao,CW
+"Latin America","Netherlands Antilles",Philipsburg,"Open Caribbean Internet eXchange",8,373M,,"Oct 2008",,18.0237,-63.0458,"Philipsburg, Sint Maarten",Philipsburg,Philipsburg,"Sint Maarten",SX
+"Latin America",Nicaragua,Managua,"Nicaraguan Internet Exchange",10,102M,,"Apr 2004",,12.1363889,-86.2513889,"Managua, Nicaragua",Managua,Managua,Nicaragua,NI
+"Latin America",Panama,"Panama City","Intered Panamá",10,,,,,8.9833333,-79.5166667,Panama,Panama,Panama,Panama,PA
+"Latin America",Paraguay,Asuncion,"CAPADI NAP-PY",15,40M,,"20 Sep 2000",,-25.2821972,-57.6351,"Asuncion, Paraguay",Asuncion,Asuncion,Paraguay,PY
+"Latin America",Peru,Lima,"NAP Perú",12,,,"14 May 2001",,-12.046374,-77.0427934,"Lima, Peru",Lima,Lima,Peru,PE
+"North America",Canada,Calgary,AlbertaIX,3,,,"23 Jan 2014",,51.0453246,-114.0581012,"Calgary, AB, Canada",Calgary,Calgary,Canada,CA
+"North America",Canada,Calgary,"Calgary Internet Exchange",8,33.6M,94855,2013,,51.0453246,-114.0581012,"Calgary, AB, Canada",Calgary,Calgary,Canada,CA
+"North America",Canada,Halifax,"Halifax Internet Exchange",5,,,"25 Nov 2013",,53.72702,-1.85754,"Halifax, West Yorkshire, UK",Halifax,Halifax,"United Kingdom",GB
+"North America",Canada,Montreal,"Quebec Internet Exchange",30,11G,14,"Jan 2013",,45.5086699,-73.5539925,"Montreal, QC, Canada",Montreal,Montreal,Canada,CA
+"North America",Canada,Ottawa,"Ottawa Internet Exchange",13,383M,1016,,,45.4215296,-75.6971931,"Ottawa, ON, Canada",Ottawa,Ottawa,Canada,CA
+"North America",Canada,Toronto,"Toronto Internet Exchange",177,107G,56406,,,43.653226,-79.3831843,"Toronto, ON, Canada",Toronto,Toronto,Canada,CA
+"North America",Canada,Vancouver,"British Columbia Internet Exchange",,,,,,49.261226,-123.1139268,"Vancouver, BC, Canada",Vancouver,Vancouver,Canada,CA
+"North America",Canada,Winnipeg,"Manitoba Internet Exchange",21,82.3M,41754,"29 Jul 2013",,49.8997541,-97.1374937,"Winnipeg, MB, Canada",Winnipeg,Winnipeg,Canada,CA
+"North America",Canada,Winnipeg,"Winnipeg Internet Exchange",9,32.5G,344,"May 2013",,49.8997541,-97.1374937,"Winnipeg, MB, Canada",Winnipeg,Winnipeg,Canada,CA
+"North America","Puerto Rico","San Juan","Internet Exchange of Puerto Rico",2,,,"16 Apr 2006",,-31.5272732,-68.5214081,"San Juan, San Juan Province, Argentina","San Juan","San Juan",Argentina,AR
+"North America","United States",Albuquerque,"New Mexico Internet Exchange",,,,2008,,35.110703,-106.609991,"Albuquerque, NM, USA",Albuquerque,Albuquerque,"United States",US
+"North America","United States",Ashburn,"Equinix IBX Ashburn",224,915G,425426,,,39.0437567,-77.4874416,"Ashburn, VA, USA",Ashburn,Ashburn,"United States",US
+"North America","United States",Atlanta,"Atlanta Internet Exchange",60,172G,122018,"20 Dec 2007",,33.7489954,-84.3879824,"Atlanta, GA, USA",Atlanta,Atlanta,"United States",US
+"North America","United States",Atlanta,"Equinix Atlanta",,,,,,33.7489954,-84.3879824,"Atlanta, GA, USA",Atlanta,Atlanta,"United States",US
+"North America","United States",Bend,"Central Oregon Internet eXchange",4,,,"12 May 2011",,44.0581728,-121.3153096,"Bend, OR, USA",Bend,Bend,"United States",US
+"North America","United States",Billings,"Yellowstone Regional Internet Exchange",7,,,2003,,45.7832856,-108.5006904,"Billings, MT, USA",Billings,Billings,"United States",US
+"North America","United States",Boston,"Boston Internet Exchange",13,,,"9 Apr 2012",,42.3584308,-71.0597732,"Boston, MA, USA",Boston,Boston,"United States",US
+"North America","United States",Boston,"Coresite - Any 2",,,,2013,,42.3584308,-71.0597732,"Boston, MA, USA",Boston,Boston,"United States",US
+"North America","United States",Boston,Equinix-Boston,,,,,,42.3584308,-71.0597732,"Boston, MA, USA",Boston,Boston,"United States",US
+"North America","United States",Buffalo,"Buffalo Niagara International Internet Exchange",8,,,"May 2011",,42.8864468,-78.8783689,"Buffalo, NY, USA",Buffalo,Buffalo,"United States",US
+"North America","United States",Chicago,"CoreSite - Any2",7,5G,,2009,,41.8781136,-87.6297982,"Chicago, IL, USA",Chicago,Chicago,"United States",US
+"North America","United States",Chicago,"Equinix Chicago IBX",36,,277874,"28 Jan 2004",,41.8781136,-87.6297982,"Chicago, IL, USA",Chicago,Chicago,"United States",US
+"North America","United States",Chicago,"Greater Chicago International Internet Exchange",2,,,"Dec 2012",,41.8781136,-87.6297982,"Chicago, IL, USA",Chicago,Chicago,"United States",US
+"North America","United States",Chicago,MAE-Chicago,,,,,,41.8781136,-87.6297982,"Chicago, IL, USA",Chicago,Chicago,"United States",US
+"North America","United States",Chicago,"PacBell ATM Exchange",,,,,,41.8781136,-87.6297982,"Chicago, IL, USA",Chicago,Chicago,"United States",US
+"North America","United States",Chicago,"STAR TAP",31,,,1998,,41.8781136,-87.6297982,"Chicago, IL, USA",Chicago,Chicago,"United States",US
+"North America","United States",Chicago,StarLight,34,,,"Mar 2001",,41.8781136,-87.6297982,"Chicago, IL, USA",Chicago,Chicago,"United States",US
+"North America","United States",Dallas,"Equinix IBX Dallas",,,,"15 Jun 2001",,32.7801399,-96.8004511,"Dallas, TX, USA",Dallas,Dallas,"United States",US
+"North America","United States",Dallas,"Equinix-Dallas(former PAIX)",,,,"24 Feb 2002",,32.7801399,-96.8004511,"Dallas, TX, USA",Dallas,Dallas,"United States",US
+"North America","United States",Dallas,"MAE Central",,,,,,32.7801399,-96.8004511,"Dallas, TX, USA",Dallas,Dallas,"United States",US
+"North America","United States",Dayton,"Dayton Metro Internet Exchange",4,,,"24 Jun 2003",,39.7589478,-84.1916069,"Dayton, OH, USA",Dayton,Dayton,"United States",US
+"North America","United States",Denver,"Coresite - Any 2",32,,,2013,,39.737567,-104.9847179,"Denver, CO, USA",Denver,Denver,"United States",US
+"North America","United States",Eugene,"Oregon Internet Exchange",,,,,,44.0520691,-123.0867536,"Eugene, OR, USA",Eugene,Eugene,"United States",US
+"North America","United States",Guam,"Guam Internet Exchange",3,,,2011,,13.444304,144.793731,Guam,Guam,GU,Guam,GU
+"North America","United States",Honolulu,DRFxchange,,,,"8 Jan 2007",,21.3069444,-157.8583333,"Honolulu, HI, USA",Honolulu,Honolulu,"United States",US
+"North America","United States",Honolulu,"Hawaii Internet Exchange",15,,,"Jul 1995",,21.3069444,-157.8583333,"Honolulu, HI, USA",Honolulu,Honolulu,"United States",US
+"North America","United States",Houston,"Houston Network Access Point",,,,,,29.7601927,-95.3693896,"Houston, TX, USA",Houston,Houston,"United States",US
+"North America","United States",Houston,"Rice EduPOP",,,,"10 May 2001",,29.7601927,-95.3693896,"Houston, TX, USA",Houston,Houston,"United States",US
+"North America","United States",Houston,"Texas GigaPOP",,,,,,29.7601927,-95.3693896,"Houston, TX, USA",Houston,Houston,"United States",US
+"North America","United States",Jacksonville,"Jacksonville Internet Exchange",8,,195,"2 Jan 2012",,30.3321838,-81.655651,"Jacksonville, FL, USA",Jacksonville,Jacksonville,"United States",US
+"North America","United States","Kansas City","Kansas City Internet Exchange",25,,,2006,,39.0997265,-94.5785667,"Kansas City, MO, USA","Kansas City",KCMO,"United States",US
+"North America","United States","Los Angeles","Any2 California",242,70G,250805,"1 Jan 2014",,34.0522342,-118.2436849,"Los Angeles, CA, USA","Los Angeles","Los Angeles","United States",US
+"North America","United States","Los Angeles","Equinix Los Angeles IBX",,,169396,"31 Aug 2004",,34.0522342,-118.2436849,"Los Angeles, CA, USA","Los Angeles","Los Angeles","United States",US
+"North America","United States","Los Angeles","Los Angeles International Internet Exchange",45,5.57G,108008,,,34.0522342,-118.2436849,"Los Angeles, CA, USA","Los Angeles","Los Angeles","United States",US
+"North America","United States","Los Angeles",MAE-LA,,,,,,34.0522342,-118.2436849,"Los Angeles, CA, USA","Los Angeles","Los Angeles","United States",US
+"North America","United States","Los Angeles","Pac Bell Los Angeles Network Access Point",,,,,,34.0522342,-118.2436849,"Los Angeles, CA, USA","Los Angeles","Los Angeles","United States",US
+"North America","United States",Madison,"Madison Internet Exchange",19,,,2000,,43.0730517,-89.4012302,"Madison, WI, USA",Madison,Madison,"United States",US
+"North America","United States",Medford,"Southern Oregon Access Exchange",5,,,2013,,42.3265152,-122.8755949,"Medford, OR, USA",Medford,Medford,"United States",US
+"North America","United States",Miami,"Coresite - Any 2",,,,2013,,25.7890972,-80.2040435,"Miami, FL, USA",Miami,Miami,"United States",US
+"North America","United States",Miami,"NAP of the Americas",78,20G,307173,"12 Aug 2004",,25.7890972,-80.2040435,"Miami, FL, USA",Miami,Miami,"United States",US
+"North America","United States",Minneapolis,"Midwest Internet Cooperative Exchange",39,,,"11 Jan 2011",,44.983334,-93.26667,"Minneapolis, MN, USA",Minneapolis,Minneapolis,"United States",US
+"North America","United States","Moffett Field",AMES-MIX,,,,,,19.9170227,-75.1630168,"Moffett Field Road, USA","Moffett Field Road","Moffett Field Rd","United States",US
+"North America","United States","Moffett Field",MAE-West,,,,,,19.9170227,-75.1630168,"Moffett Field Road, USA","Moffett Field Road","Moffett Field Rd","United States",US
+"North America","United States","Moffett Field",NGIX-West,,,,,,19.9170227,-75.1630168,"Moffett Field Road, USA","Moffett Field Road","Moffett Field Rd","United States",US
+"North America","United States",Nashville,"Nashville NAP",,,,,,36.1666667,-86.7833333,"Nashville, TN, USA",Nashville,Nashville,"United States",US
+"North America","United States","New Jersey","MAGPI Gigapop",,,,,,40.0583238,-74.4056612,"New Jersey, USA","New Jersey",NJ,"United States",US
+"North America","United States","New York","Big Apple Peering Exchange (formerly NY6iX)",25,,,,,40.7056308,-73.9780035,"New York, NY, USA","New York","New York","United States",US
+"North America","United States","New York","Coresite - Any 2",,,,2013,,40.7056308,-73.9780035,"New York, NY, USA","New York","New York","United States",US
+"North America","United States","New York","Equinix New York IBX",,,,"13 Jan 2006",,40.7056308,-73.9780035,"New York, NY, USA","New York","New York","United States",US
+"North America","United States","New York","Equinix-NY(former Paix)",,,120263,,,40.7056308,-73.9780035,"New York, NY, USA","New York","New York","United States",US
+"North America","United States","New York",MAE-NY,,,,,,40.7056308,-73.9780035,"New York, NY, USA","New York","New York","United States",US
+"North America","United States","New York","New York International Internet Exchange",135,237G,97678,1996,,40.7056308,-73.9780035,"New York, NY, USA","New York","New York","United States",US
+"North America","United States","New York","Peer 1 Internet Exchange",,,,"9 Jan 2004",,40.7056308,-73.9780035,"New York, NY, USA","New York","New York","United States",US
+"North America","United States","New York","TelX Internet Exchange, New York",25,17.9G,60117,2009,,40.7056308,-73.9780035,"New York, NY, USA","New York","New York","United States",US
+"North America","United States",North-Virginia,"LINX NoVa",3,757M,,"Mar 2014",,37.4783967,-76.4530772,"North, VA 23128, USA",North,North,23128,23128
+"North America","United States","Palo Alto","Equinix- Palo Alto",,41G,669621,"Dec 1994",,37.4418834,-122.1430195,"Palo Alto, CA, USA","Palo Alto","Palo Alto","United States",US
+"North America","United States",Philadelphia,"The Philadelphia Internet Exchange",3,,,"Jan 2013",,39.952335,-75.163789,"Philadelphia, PA, USA",Philadelphia,Philadelphia,"United States",US
+"North America","United States",Phoenix,"Arizona Internet Exchange",5,75.6M,,2011,,33.4483771,-112.0740373,"Phoenix, AZ, USA",Phoenix,Phoenix,"United States",US
+"North America","United States",Phoenix,Phoenix-IX,4,,,"Dec 2012",,33.4483771,-112.0740373,"Phoenix, AZ, USA",Phoenix,Phoenix,"United States",US
+"North America","United States",Phoenix,"TelX Internet Exchange",20,,,"2 Jun 2008",,33.4483771,-112.0740373,"Phoenix, AZ, USA",Phoenix,Phoenix,"United States",US
+"North America","United States",Pittsburgh,"Pittsburgh Exchange Point",7,5M,,,,40.4406248,-79.9958864,"Pittsburgh, PA, USA",Pittsburgh,Pittsburgh,"United States",US
+"North America","United States",Pittsburgh,"Three Rivers Optical Exchange",,,,,,40.4406248,-79.9958864,"Pittsburgh, PA, USA",Pittsburgh,Pittsburgh,"United States",US
+"North America","United States",Portland,"Northwest Access Exchange",32,,66,,,45.5234515,-122.6762071,"Portland, OR, USA",Portland,Portland,"United States",US
+"North America","United States",Reston,"Coresite - Any 2 NorthEast",30,,,2013,,38.9586307,-77.3570028,"Reston, VA, USA",Reston,Reston,"United States",US
+"North America","United States",Richardson,"North Texas GigaPOP",7,,,"20 Aug 2004",,32.9483335,-96.7298519,"Richardson, TX, USA",Richardson,Richardson,"United States",US
+"North America","United States","San Diego","San Diego Network Access Point",21,,,"Feb 1998",,32.715738,-117.1610838,"San Diego, CA, USA","San Diego","San Diego","United States",US
+"North America","United States","San Francisco","Equinix San Francisco",,,,,,37.7749295,-122.4194155,"San Francisco, CA, USA","San Francisco",SF,"United States",US
+"North America","United States","San Francisco",PB-NAP,,,,,,37.7749295,-122.4194155,"San Francisco, CA, USA","San Francisco",SF,"United States",US
+"North America","United States","San Francisco","San Francisco Metropolitan Internet Exchange",13,,22247,"Nov 2013",,37.7749295,-122.4194155,"San Francisco, CA, USA","San Francisco",SF,"United States",US
+"North America","United States","San Jose","Coresite - Any 2 Northern California",50,,,2013,,37.3393857,-121.8949555,"San Jose, CA, USA","San Jose","San Jose","United States",US
+"North America","United States","San Jose","Equinix IBX San Jose",37,,,,,37.3393857,-121.8949555,"San Jose, CA, USA","San Jose","San Jose","United States",US
+"North America","United States","San Jose",MAE-West-ATM,,,,,,37.3393857,-121.8949555,"San Jose, CA, USA","San Jose","San Jose","United States",US
+"North America","United States","Santa Clara",6IIX,,,,,,37.3541079,-121.9552356,"Santa Clara, CA, USA","Santa Clara","Santa Clara","United States",US
+"North America","United States",Seattle,Equinix-Seattle,,,8192,,,47.6062095,-122.3320708,"Seattle, WA, USA",Seattle,Seattle,"United States",US
+"North America","United States",Seattle,"Seattle Internet Exchange",177,264G,126188,"13 Apr 2009",,47.6062095,-122.3320708,"Seattle, WA, USA",Seattle,Seattle,"United States",US
+"North America","United States",Seattle,"Seattle Northwest Network Access Point",,,,,,47.6062095,-122.3320708,"Seattle, WA, USA",Seattle,Seattle,"United States",US
+"North America","United States",Secaucus,"Equinix IBX Secaucus",,,,,,40.7895453,-74.0565298,"Secaucus, NJ, USA",Secaucus,Secaucus,"United States",US
+"North America","United States",Vienna,Equinix-VA,,,,,,48.2081743,16.3738189,"Vienna, Austria",Vienna,Vienna,Austria,AT
+"North America","United States","Washington, DC",MAE-East,,,,"Dec 1993",,38.9072309,-77.0364641,"Washington, DC, USA",Washington,Washington,"United States",US
+"North America","United States","Washington, DC",MAE-East-ATM,,,,"Jul 1998",,38.9072309,-77.0364641,"Washington, DC, USA",Washington,Washington,"United States",US
